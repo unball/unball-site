@@ -95,8 +95,6 @@ export function HeroImage({
             borderRadius: 1,
           }}
         />
-
-        {/* SVG para linhas de extensão, cota e setas */}
         <Box
           component="svg"
           sx={{
@@ -109,8 +107,6 @@ export function HeroImage({
             pointerEvents: "none",
           }}
         >
-          {/* --- COTA DE LARGURA (HORIZONTAL - TOPO) --- */}
-          {/* Linha principal de cota da largura */}
           <line
             x1="0"
             y1="-22"
@@ -119,16 +115,11 @@ export function HeroImage({
             stroke={primaryColor}
             strokeWidth="0.5"
           />
-          {/* Seta esquerda */}
           <polygon points={"0,-22 8,-26 6,-22 8,-18"} fill={primaryColor} />
-          {/* Seta direita */}
           <polygon
             points={`${imgW},-22 ${imgW - 8},-26 ${imgW - 6},-22 ${imgW - 8},-18`}
             fill={primaryColor}
           />
-
-          {/* --- COTA DE ALTURA (VERTICAL - DIREITA) --- */}
-          {/* Linha principal de cota da altura */}
           <line
             x1={imgW + 22}
             y1="0"
@@ -137,22 +128,16 @@ export function HeroImage({
             stroke={primaryColor}
             strokeWidth="0.5"
           />
-          {/* Seta superior */}
           <polygon
             points={`${imgW + 22},0 ${imgW + 18},8 ${imgW + 22},6 ${imgW + 26},8`}
             fill={primaryColor}
           />
-          {/* Seta inferior */}
           <polygon
             points={`${imgW + 22},${imgH} ${imgW + 18},${imgH - 8} ${imgW + 22},${imgH - 6} ${imgW + 26},${imgH - 8}`}
             fill={primaryColor}
           />
         </Box>
-
-        {/* Badge do Texto da Cota de Largura */}
         <TextBadge value={imgW} position="top" />
-
-        {/* Badge do Texto da Cota de Altura */}
         <TextBadge value={imgH} position="right" />
       </Box>
     </Box>

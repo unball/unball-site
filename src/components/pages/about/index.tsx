@@ -1,8 +1,11 @@
-import { useTranslation } from "react-i18next";
+import HeroSection from "./sections/HeroSection";
 
 function About() {
-  const { t } = useTranslation();
-  return <h1>{t("pages.about.title")}</h1>;
+  return(
+    <>
+      <HeroSection/>
+    </>
+  );
 }
 
 export default About;
