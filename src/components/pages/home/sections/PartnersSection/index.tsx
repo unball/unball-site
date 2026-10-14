@@ -20,8 +20,8 @@ function PartnersSection() {
           title={t("pages.home.partners.title")}
         />
         <Grid container spacing={1}>
-          {partnerItems.map((item, index) => (
-            <Grid key={item.name || index} size={{ xs: 12, sm: 6, md: 3 }}>
+          {partnerItems.map((item) => (
+            <Grid key={item.name} size={{ xs: 12, sm: 6, md: 3 }}>
               <PartnerCard item={item} />
             </Grid>
           ))}

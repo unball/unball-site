@@ -69,7 +69,7 @@ function RobocupSection() {
           </Typography>
           <Grid container spacing={1.5}>
             {workAreaItems.map((item, index) => (
-              <Grid key={item.title || index} size={{ xs: 6, sm: 4 }}>
+              <Grid key={item.icon} size={{ xs: 6, sm: 4 }}>
                 <WorkAreaBadge
                   title={item.title}
                   icon={iconMap[item.icon] || null}

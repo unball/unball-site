@@ -1,6 +1,7 @@
 export const papers = {
   items: [
     {
+      id: 1,
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],
@@ -17,6 +18,7 @@ export const papers = {
       ctaText: "Baixar arquivo",
     },
     {
+      id: 2,
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],
@@ -33,6 +35,7 @@ export const papers = {
       ctaText: "Baixar arquivo",
     },
     {
+      id: 3,
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],

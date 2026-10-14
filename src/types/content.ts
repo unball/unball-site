@@ -22,6 +22,7 @@ export type LeagueItem = {
 };
 
 export type PaperItem = {
+  id: number | string;
   title: string;
   authors: string[];
   date: string;

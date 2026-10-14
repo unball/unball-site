@@ -25,8 +25,8 @@ function LeagueSection() {
             spacing={3}
             sx={{ width: "100%" }}
           >
-            {leagueItems.map((item, index) => (
-              <LeagueCard key={item.shortName || index} item={item} />
+            {leagueItems.map((item) => (
+              <LeagueCard key={item.shortName} item={item} />
             ))}
           </Stack>
         </Stack>

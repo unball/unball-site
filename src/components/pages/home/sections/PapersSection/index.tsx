@@ -26,8 +26,8 @@ function PapersSection() {
           title={t("pages.home.papers.title")}
         />
         <Stack spacing={3} sx={{ width: "100%" }}>
-          {displayedItems.map((item, index) => (
-            <PaperCard key={item.title || index} item={item} />
+          {displayedItems.map((item) => (
+            <PaperCard key={item.id} item={item} />
           ))}
         </Stack>
         {hasMore && (
