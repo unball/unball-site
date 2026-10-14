@@ -17,7 +17,10 @@ function HeroSection() {
           color: "text.primary",
         }}
       >
-        <SectionHeader title={t("pages.about.hero.title")} />
+        <SectionHeader
+          title={t("pages.about.hero.title")} 
+          description={t("domain.about.description")}
+        />
         <HeroImage src={Logo} alt={t("pages.about.hero.imageAlt")} />
       </FlexBoxBetween>
     </BoxSection>
