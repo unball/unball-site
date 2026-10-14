@@ -42,16 +42,18 @@ export function TextBadge({
 
   return (
     <Box
-      sx={{
-        position: "absolute",
-        backgroundColor: "background.default",
-        color: "text.primary",
-        px: 1,
-        py: 0.25,
-        pointerEvents: "none",
-        ...basePositionSx,
+      sx={[
+        {
+          position: "absolute",
+          backgroundColor: "background.default",
+          color: "text.primary",
+          px: 1,
+          py: 0.25,
+          pointerEvents: "none",
+          ...basePositionSx,
+        },
         ...(Array.isArray(sx) ? sx : [sx]),
-      }}
+      ]}
     >
       <Typography
         sx={(theme) => ({

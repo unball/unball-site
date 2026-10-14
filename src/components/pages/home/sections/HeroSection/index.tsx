@@ -45,9 +45,9 @@ function HeroSection() {
           </Box>
         </SectionHeader>
 
-        <HeroImage 
+        <HeroImage
           src={Logo}
-          alt={t("pages.home.hero.imageAlt")} 
+          alt={t("pages.home.hero.imageAlt")}
           showDimensions
         />
       </FlexBoxBetween>

@@ -1,4 +1,4 @@
 export const hero = {
-    title: "Sobre Nós",
-    imageAlt: "Logo UnBall"
+  title: "Sobre Nós",
+  imageAlt: "Logo UnBall",
 };

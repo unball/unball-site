@@ -1,9 +1,9 @@
 import HeroSection from "./sections/HeroSection";
 
 function About() {
-  return(
+  return (
     <>
-      <HeroSection/>
+      <HeroSection />
     </>
   );
 }

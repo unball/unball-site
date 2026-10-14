@@ -35,11 +35,13 @@ export function SectionHeader({
     <Stack
       component="header"
       spacing={spacing}
-      sx={{
-        alignItems: alignmentMap[align],
-        textAlign: align,
-        ...sx,
-      }}
+      sx={[
+        {
+          alignItems: alignmentMap[align],
+          textAlign: align,
+        },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
     >
       {subtitle && (
         <Typography variant="h6" component="span">
