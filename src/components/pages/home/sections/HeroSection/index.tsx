@@ -2,11 +2,11 @@ import { Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import Logo from "@/assets/images/unbolinha/bolinha_sentado.png";
+import HeroImage from "@/components/common/HeroImage";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
-
-import HeroImage from "./HeroImage";
 
 function HeroSection() {
   const { t } = useTranslation();
@@ -45,7 +45,11 @@ function HeroSection() {
           </Box>
         </SectionHeader>
 
-        <HeroImage alt={t("pages.home.hero.imageAlt")} />
+        <HeroImage 
+          src={Logo}
+          alt={t("pages.home.hero.imageAlt")} 
+          showDimensions
+        />
       </FlexBoxBetween>
     </BoxSection>
   );
