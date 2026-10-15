@@ -49,3 +49,9 @@ export type InstitutionalItem = {
   label: string;
   href: string;
 };
+
+export type TimelineItem = {
+  date: string;
+  title: string;
+  description: string;
+};
