@@ -14,7 +14,15 @@ function TimelineSection() {
   );
   return (
     <BoxSection>
-      <Stack spacing={6} sx={{ width: "100%" }}>
+      <Stack 
+        spacing={6} 
+        sx={{ 
+          width: "100%", 
+          borderTop: 1, 
+          borderColor: "border.main",
+          py: 10
+        }}
+      >
         <SectionHeader title={t("pages.about.timeline.title")} />
         <Timeline items={timelineItems} />
       </Stack>
