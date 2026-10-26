@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import type { ResponsiveStyleValue } from "@mui/system";
 import { useEffect, useRef, useState } from "react";
 
-import defaultHeroImg from "@/assets/images/unbolinha/bolinha_sentado.png";
+import defaultSectionImg from "@/assets/images/unbolinha/bolinha_sentado.png";
 
 export type BadgePosition = "top" | "right" | "bottom" | "left";
 
@@ -67,7 +67,7 @@ function TextBadge({ value, unit = "px", position, sx }: TextBadgeProps) {
   );
 }
 
-export type HeroImageProps = {
+export type SectionImageProps = {
   src?: string;
   alt?: string;
   width?: ResponsiveStyleValue<string | number>;
@@ -77,13 +77,13 @@ export type HeroImageProps = {
 
 const DEFAULT_WIDTH = { xs: "100%", sm: "380px", lg: "410px", xl: "650px" };
 
-export function HeroImage({
-  src = defaultHeroImg,
+export function SectionImage({
+  src = defaultSectionImg,
   alt = "",
   width = DEFAULT_WIDTH,
   showDimensions = false,
   sx,
-}: HeroImageProps) {
+}: SectionImageProps) {
   const theme = useTheme();
   const imgRef = useRef<HTMLImageElement>(null);
   const [dimensions, setDimensions] = useState<{
@@ -220,4 +220,4 @@ export function HeroImage({
   );
 }
 
-export default HeroImage;
+export default SectionImage;

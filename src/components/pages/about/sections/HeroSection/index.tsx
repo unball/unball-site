@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import Logo from "@/assets/images/logos/unball-logo.png";
-import HeroImage from "@/components/common/HeroImage";
 import SectionHeader from "@/components/common/SectionHeader";
+import SectionImage from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
 function HeroSection() {
@@ -17,10 +17,10 @@ function HeroSection() {
         }}
       >
         <SectionHeader
-          title={t("pages.about.hero.title")} 
+          title={t("pages.about.hero.title")}
           description={t("domain.about.description")}
         />
-        <HeroImage src={Logo} alt={t("pages.about.hero.imageAlt")} />
+        <SectionImage src={Logo} alt={t("pages.about.hero.imageAlt")} />
       </FlexBoxBetween>
     </BoxSection>
   );

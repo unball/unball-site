@@ -1,6 +1,6 @@
 import { hero } from "./hero";
-import { timeline } from "./timeline";
 import { mascot } from "./mascot";
+import { timeline } from "./timeline";
 
 export const about = {
   hero,

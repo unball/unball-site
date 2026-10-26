@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import Logo from "@/assets/images/unbolinha/bolinha_sentado.png";
-import HeroImage from "@/components/common/HeroImage";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import SectionImage from "@/components/common/SectionImage";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
@@ -45,7 +45,7 @@ function HeroSection() {
           </Box>
         </SectionHeader>
 
-        <HeroImage
+        <SectionImage
           src={Logo}
           alt={t("pages.home.hero.imageAlt")}
           showDimensions

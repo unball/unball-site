@@ -8,7 +8,6 @@ function About() {
       <HeroSection />
       <TimelineSection />
       <MascotSection />
-      
     </>
   );
 }

@@ -10,17 +10,17 @@ import type { TimelineItem } from "@/types/content";
 function TimelineSection() {
   const { t } = useTranslation();
   const timelineItems = useTranslatedList<TimelineItem>(
-    "pages.about.timeline.items",
+    "pages.about.timeline.items"
   );
   return (
     <BoxSection>
-      <Stack 
-        spacing={6} 
-        sx={{ 
-          width: "100%", 
-          borderTop: 1, 
+      <Stack
+        spacing={6}
+        sx={{
+          width: "100%",
+          borderTop: 1,
           borderColor: "border.main",
-          py: 10
+          py: 10,
         }}
       >
         <SectionHeader title={t("pages.about.timeline.title")} />
