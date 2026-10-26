@@ -7,7 +7,17 @@ import type { AchievementItem } from "@/types/content";
 
 import { AchievementCarousel } from "./AchievementCarousel";
 
-function AchievementsSection() {
+type AchievementsSectionProps = {
+  title?: string;
+  subtitle?: string;
+  bordered?: "all" | "x" | "y" | "none";
+};
+
+function AchievementsSection({
+  title,
+  subtitle,
+  bordered = "y",
+}: AchievementsSectionProps) {
   const { t } = useTranslation();
   const achievementItems = useTranslatedList<AchievementItem>(
     "domain.achievements.items"
@@ -16,7 +26,7 @@ function AchievementsSection() {
   return (
     <BoxSection>
       <Panel
-        bordered="y"
+        bordered={bordered}
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -32,8 +42,8 @@ function AchievementsSection() {
         }}
       >
         <SectionHeader
-          subtitle={t("pages.home.achievements.subtitle")}
-          title={t("pages.home.achievements.title")}
+          subtitle={subtitle ?? t("domain.achievements.subtitle")}
+          title={title ?? t("domain.achievements.title")}
           spacing={1.5}
         />
 

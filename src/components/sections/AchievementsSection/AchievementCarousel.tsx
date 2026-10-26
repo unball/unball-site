@@ -54,7 +54,7 @@ export function AchievementCarousel({ items }: AchievementCarouselProps) {
     >
       <CarouselArrow
         direction="left"
-        label={t("pages.home.achievements.previous")}
+        label={t("domain.achievements.previous")}
         onClick={handlePrev}
       />
 
@@ -94,7 +94,7 @@ export function AchievementCarousel({ items }: AchievementCarouselProps) {
 
       <CarouselArrow
         direction="right"
-        label={t("pages.home.achievements.next")}
+        label={t("domain.achievements.next")}
         onClick={handleNext}
       />
     </Stack>

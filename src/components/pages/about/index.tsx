@@ -1,3 +1,5 @@
+import AchievementsSection from "@/components/sections/AchievementsSection";
+
 import HeroSection from "./sections/HeroSection";
 import MascotSection from "./sections/MascotSection";
 import TimelineSection from "./sections/TimelineSection";
@@ -7,6 +9,7 @@ function About() {
     <>
       <HeroSection />
       <TimelineSection />
+      <AchievementsSection />
       <MascotSection />
     </>
   );

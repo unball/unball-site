@@ -1,5 +1,6 @@
+import AchievementsSection from "@/components/sections/AchievementsSection";
+
 import AboutSection from "./sections/AboutSection";
-import AchievementsSection from "./sections/AchievementsSection";
 import ContactSection from "./sections/ContactSection";
 import HeroSection from "./sections/HeroSection";
 import LeagueSection from "./sections/LeagueSection";

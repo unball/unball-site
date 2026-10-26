@@ -1,5 +1,4 @@
 import { about } from "./about";
-import { achievements } from "./achievements";
 import { contact } from "./contact";
 import { hero } from "./hero";
 import { league } from "./league";
@@ -12,7 +11,6 @@ export const home = {
   robocup,
   about,
   league,
-  achievements,
   papers,
   partners,
   contact,
