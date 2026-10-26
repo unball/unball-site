@@ -6,8 +6,9 @@ function About() {
   return (
     <>
       <HeroSection />
-      <MascotSection />
       <TimelineSection />
+      <MascotSection />
+      
     </>
   );
 }

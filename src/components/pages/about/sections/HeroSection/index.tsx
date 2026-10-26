@@ -14,7 +14,6 @@ function HeroSection() {
           width: "100%",
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: 6, md: 4 },
-          color: "text.primary",
         }}
       >
         <SectionHeader

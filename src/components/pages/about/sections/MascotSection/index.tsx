@@ -1,28 +1,31 @@
 import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
-
+import Logo from "/images/unbolinha/bolinha_croche.png";
 import SectionHeader from "@/components/common/SectionHeader";
-import { BoxSection } from "@/shared/styled";
+import { BoxSection, FlexBoxBetween } from "@/shared/styled";
+import HeroImage from "@/components/common/HeroImage";
 
 function MascotSection() {
     const { t } = useTranslation();
     return(
         <BoxSection>
-            <Stack 
-                spacing={6} 
-                sx={{ 
-                    width: "100%", 
-                    borderTop: 1, 
-                    borderColor: "border.main",
-                    py: 10
+            <FlexBoxBetween
+                sx={{
+                    width: "100%",
+                    flexDirection: { xs: "column", md: "row" },
+                    gap: { xs: 6, md: 4 },
                 }}
             >
                 <SectionHeader 
                     title={t("pages.about.mascot.title")} 
                     description={t("pages.about.mascot.description")}
                 />
-                
-            </Stack>
+                <HeroImage 
+                    src={Logo} 
+                    alt={t("pages.about.mascot.imageAlt")}
+                    width={{ xs: 295, md: 395 }}
+                 />
+            </FlexBoxBetween>
         </BoxSection>
     );
 }
