@@ -1,9 +1,9 @@
-import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
+
 import Logo from "/images/unbolinha/bolinha_croche.png";
+import HeroImage from "@/components/common/HeroImage";
 import SectionHeader from "@/components/common/SectionHeader";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
-import HeroImage from "@/components/common/HeroImage";
 
 function MascotSection() {
     const { t } = useTranslation();
@@ -24,7 +24,7 @@ function MascotSection() {
                     src={Logo} 
                     alt={t("pages.about.mascot.imageAlt")}
                     width={{ xs: 295, md: 395 }}
-                 />
+                />
             </FlexBoxBetween>
         </BoxSection>
     );
