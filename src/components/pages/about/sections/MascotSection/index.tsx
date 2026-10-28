@@ -15,6 +15,7 @@ function MascotSection() {
                 flexDirection: { xs: "column", md: "row" },
                 gap: { xs: 6, md: 4 },
                 borderTop: 1,
+                borderBottom: 1,
                 borderColor: "border.main",
                 py: 10,
             }}

@@ -8,17 +8,22 @@ import type { LeagueItem } from "@/types/content";
 
 import { LeagueCard } from "./LeagueCard";
 
-function LeagueSection() {
+type LeagueSectionProps = {
+  title?: string;
+  subtitle?: string;
+};
+
+function LeagueSection({ title, subtitle }: LeagueSectionProps) {
   const { t } = useTranslation();
-  const leagueItems = useTranslatedList<LeagueItem>("pages.home.league.items");
+  const leagueItems = useTranslatedList<LeagueItem>("domain.league.items");
 
   return (
     <BoxSection>
       <FlexBoxBetween sx={{ width: "100%" }}>
         <Stack spacing={2} sx={{ width: "100%" }}>
           <SectionHeader
-            subtitle={t("pages.home.league.subtitle")}
-            title={t("pages.home.league.title")}
+            subtitle={subtitle ?? t("domain.league.subtitle")}
+            title={title ?? t("domain.league.title")}
           />
           <Stack
             direction={{ xs: "column", md: "row" }}
