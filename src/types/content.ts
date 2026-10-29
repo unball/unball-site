@@ -21,8 +21,11 @@ export type LeagueItem = {
   trivia?: LeagueTrivia;
 };
 
+export type PaperType = "tdp" | "article" | "tcc";
+
 export type PaperItem = {
   id: number | string;
+  type: PaperType;
   title: string;
   authors: string[];
   date: string;

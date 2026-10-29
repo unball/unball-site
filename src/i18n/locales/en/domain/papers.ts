@@ -1,7 +1,9 @@
 export const papers = {
+  empty: "No publications found for the selected filter.",
   items: [
     {
       id: 1,
+      type: "tdp",
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],
@@ -19,6 +21,7 @@ export const papers = {
     },
     {
       id: 2,
+      type: "article",
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],
@@ -36,6 +39,7 @@ export const papers = {
     },
     {
       id: 3,
+      type: "tcc",
       title:
         "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
       authors: ["Gustavo Silva"],
