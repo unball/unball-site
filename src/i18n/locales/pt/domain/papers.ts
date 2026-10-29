@@ -1,5 +1,7 @@
 export const papers = {
   empty: "Nenhuma publicação encontrada para o filtro selecionado.",
+  yearBadgeText: "ANO",
+  authorsLabel: "AUTORES:",
   items: [
     {
       id: 1,

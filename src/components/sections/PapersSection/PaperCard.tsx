@@ -70,7 +70,7 @@ export function PaperCard({ item }: PaperCardProps) {
                   fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
                 }}
               >
-                {t("pages.home.papers.authorsLabel", "AUTORES:")}{" "}
+                {t("domain.papers.authorsLabel", "AUTORES:")}{" "}
                 {Array.isArray(item.authors) && item.authors.join(", ")}
               </Typography>
             }

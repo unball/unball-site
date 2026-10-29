@@ -30,7 +30,7 @@ export function YearBadge({ date }: YearBadgeProps) {
         variant="h6"
         sx={{ fontSize: { xs: "0.55rem", sm: "0.65rem" } }}
       >
-        {t("pages.home.papers.yearBadgeText")}
+        {t("domain.papers.yearBadgeText", "ANO")}
       </Typography>
       <Typography
         variant="h3"

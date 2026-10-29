@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import Logo from "/images/unbolinha/bolinha_croche.png";
+import Logo from "@/assets/images/unbolinha/bolinha_croche.png";
 import SectionHeader from "@/components/common/SectionHeader";
 import SectionImage from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";

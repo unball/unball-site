@@ -1,5 +1,7 @@
 export const papers = {
   empty: "No publications found for the selected filter.",
+  yearBadgeText: "YEAR",
+  authorsLabel: "AUTHORS:",
   items: [
     {
       id: 1,
