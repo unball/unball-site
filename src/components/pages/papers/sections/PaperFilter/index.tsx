@@ -17,7 +17,11 @@ const FILTER_OPTIONS: {
 }[] = [
   { key: "all", labelKey: "pages.papers.filters.all", defaultLabel: "TODOS" },
   { key: "tdp", labelKey: "pages.papers.filters.tdp", defaultLabel: "TDPS" },
-  { key: "article", labelKey: "pages.papers.filters.article", defaultLabel: "ARTIGOS" },
+  {
+    key: "article",
+    labelKey: "pages.papers.filters.article",
+    defaultLabel: "ARTIGOS",
+  },
   { key: "tcc", labelKey: "pages.papers.filters.tcc", defaultLabel: "TCCS" },
 ];
 
