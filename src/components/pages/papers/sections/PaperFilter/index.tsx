@@ -1,9 +1,9 @@
 import { alpha, Button, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-import type { PaperType } from "@/types/content";
+import type { PaperFilterType } from "@/types/content";
 
-export type PaperFilterType = "all" | PaperType;
+export type { PaperFilterType };
 
 export interface PaperFilterProps {
   activeFilter: PaperFilterType;
@@ -58,7 +58,7 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
               ...(isActive
                 ? {
                     backgroundColor: theme.palette.primary.main,
-                    color: "#FFFFFF",
+                    color: theme.palette.primary.contrastText,
                     border: `1px solid ${theme.palette.primary.main}`,
                     "&:hover": {
                       backgroundColor: theme.palette.primary.dark,
@@ -67,7 +67,7 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
                   }
                 : {
                     backgroundColor: alpha(theme.palette.background.paper, 0.4),
-                    color: "#FFFFFF",
+                    color: theme.palette.text.primary,
                     border: `1px solid ${theme.palette.border.subtle}`,
                     "&:hover": {
                       backgroundColor: alpha(
@@ -75,7 +75,7 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
                         0.15
                       ),
                       borderColor: theme.palette.secondary.main,
-                      color: "#FFFFFF",
+                      color: theme.palette.text.primary,
                     },
                   }),
             })}

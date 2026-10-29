@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import PapersSection from "@/components/sections/PapersSection";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
+import type { PaperFilterType } from "@/types/content";
 
 import HeroSection from "./sections/HeroSection";
-import type { PaperFilterType } from "./sections/PaperFilter";
 import PaperFilter from "./sections/PaperFilter";
 
 function Papers() {

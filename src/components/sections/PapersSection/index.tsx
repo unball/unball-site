@@ -7,13 +7,13 @@ import { SectionHeader } from "@/components/common/SectionHeader";
 import { useTranslatedList } from "@/hooks/useTranslatedList";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection } from "@/shared/styled";
-import type { PaperItem } from "@/types/content";
+import type { PaperFilterType, PaperItem } from "@/types/content";
 
 import type { SharedSectionProps } from "../types";
 import { PaperCard } from "./PaperCard";
 
 export type PapersSectionProps = SharedSectionProps & {
-  filterType?: string;
+  filterType?: PaperFilterType;
   limit?: number;
   showMoreButton?: boolean;
   disableWrapper?: boolean;
@@ -34,9 +34,7 @@ function PapersSection({
 
   const filteredItems = useMemo(() => {
     if (!filterType || filterType === "all") return paperItems;
-    return paperItems.filter(
-      (item) => item.type?.toLowerCase() === filterType.toLowerCase()
-    );
+    return paperItems.filter((item) => item.type === filterType);
   }, [paperItems, filterType]);
 
   const displayedItems =

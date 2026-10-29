@@ -21,7 +21,9 @@ export type LeagueItem = {
   trivia?: LeagueTrivia;
 };
 
-export type PaperType = "tdp" | "article" | "tcc";
+export const PAPER_TYPES = ["tdp", "article", "tcc"] as const;
+export type PaperType = (typeof PAPER_TYPES)[number];
+export type PaperFilterType = "all" | PaperType;
 
 export type PaperItem = {
   id: number | string;
