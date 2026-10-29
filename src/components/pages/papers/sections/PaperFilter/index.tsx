@@ -36,7 +36,6 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
         flexWrap: { xs: "wrap", md: "nowrap" },
         width: { xs: "100%", md: "180px", lg: "220px" },
         flexShrink: 0,
-        position: { md: "sticky" },
         top: { md: 100 },
       }}
     >
@@ -50,7 +49,6 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
               fontFamily: theme.typography.fontFamilyMono,
               fontSize: { xs: "0.75rem", sm: "0.8125rem" },
               fontWeight: 700,
-              letterSpacing: "0.05em",
               textTransform: "uppercase",
               px: { xs: 2, sm: 2.5 },
               py: { xs: 0.75, sm: 1.25 },

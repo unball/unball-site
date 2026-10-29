@@ -9,6 +9,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TagCard } from "@/components/common/TagCard";
@@ -22,6 +23,23 @@ export type PaperCardProps = {
 
 export function PaperCard({ item }: PaperCardProps) {
   const { t } = useTranslation();
+  const [expanded, setExpanded] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const abstractRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = abstractRef.current;
+    if (!el) return;
+
+    const check = () => {
+      if (!expanded) setIsOverflowing(el.scrollHeight > el.clientHeight + 1);
+    };
+    check();
+
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [expanded, item.abstract]);
 
   return (
     <Card>
@@ -77,12 +95,38 @@ export function PaperCard({ item }: PaperCardProps) {
           />
           <CardContent sx={{ padding: 0, mt: 2 }}>
             <Typography
+              ref={abstractRef}
               sx={{
                 fontSize: { xs: "0.875rem", sm: "1rem" },
+                ...(!expanded && {
+                  display: "-webkit-box",
+                  WebkitLineClamp: 4,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }),
               }}
             >
               {item.abstract}
             </Typography>
+            {(isOverflowing || expanded) && (
+              <Button
+                onClick={() => setExpanded((prev) => !prev)}
+                aria-expanded={expanded}
+                sx={{
+                  color: "primary.main",
+                  mt: 1,
+                  px: 0,
+                  minWidth: 0,
+                  fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                  textTransform: "none",
+                  "&:hover": { backgroundColor: "transparent", textDecoration: "underline" },
+                }}
+              >
+                {expanded
+                  ? t("domain.papers.readLess", "Leia menos")
+                  : t("domain.papers.readMore", "Leia mais")}
+              </Button>
+            )}
           </CardContent>
           <Button
             href={item.url}
