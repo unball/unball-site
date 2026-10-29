@@ -1,16 +1,17 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { useMemo } from "react";
+import { Box, Button, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import { SectionHeader } from "@/components/common/SectionHeader";
-import { useTranslatedList } from "@/hooks/useTranslatedList";
+import { usePapers } from "@/hooks/usePapers";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection } from "@/shared/styled";
-import type { PaperFilterType, PaperItem } from "@/types/content";
+import type { PaperFilterType } from "@/types/content";
 
 import type { SharedSectionProps } from "../types";
-import { PaperCard } from "./PaperCard";
+import { PaperList } from "./PaperList";
+
+export { PaperList };
 
 export type PapersSectionProps = SharedSectionProps & {
   filterType?: PaperFilterType;
@@ -30,24 +31,16 @@ function PapersSection({
 }: PapersSectionProps = {}) {
   const { t } = useTranslation();
   const getPath = useLocalizedPath();
-  const paperItems = useTranslatedList<PaperItem>("domain.papers.items");
 
-  const filteredItems = useMemo(() => {
-    if (!filterType || filterType === "all") return paperItems;
-    return paperItems.filter((item) => item.type === filterType);
-  }, [paperItems, filterType]);
+  const effectiveLimit =
+    limit !== undefined ? limit : showHeader ? 2 : undefined;
 
-  const displayedItems =
-    limit !== undefined
-      ? filteredItems.slice(0, limit)
-      : showHeader
-        ? filteredItems.slice(0, 2)
-        : filteredItems;
+  const { displayedPapers, hasMore } = usePapers({
+    filterType,
+    limit: effectiveLimit,
+  });
 
-  const shouldShowMore =
-    showMoreButton !== undefined
-      ? showMoreButton
-      : showHeader && filteredItems.length > 2;
+  const shouldShowMore = showMoreButton ?? (showHeader && hasMore);
 
   const content = (
     <Stack spacing={2} sx={{ width: "100%" }}>
@@ -57,28 +50,7 @@ function PapersSection({
           title={title ?? t("pages.home.papers.title")}
         />
       )}
-      <Stack spacing={3} sx={{ width: "100%" }}>
-        {displayedItems.length > 0 ? (
-          displayedItems.map((item) => (
-            <PaperCard key={item.id} item={item} />
-          ))
-        ) : (
-          <Box
-            sx={{
-              p: 4,
-              textAlign: "center",
-              border: 1,
-              borderColor: "border.subtle",
-              color: "text.secondary",
-              fontFamily: "fontFamilyMono",
-            }}
-          >
-            <Typography variant="body1">
-              {t("domain.papers.empty", "Nenhuma publicação encontrada.")}
-            </Typography>
-          </Box>
-        )}
-      </Stack>
+      <PaperList items={displayedPapers} />
       {shouldShowMore && (
         <Box sx={{ display: "flex", pt: 2 }}>
           <Button component={Link} to={getPath("papers")} variant="outlined">

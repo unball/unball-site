@@ -1,6 +1,8 @@
+import { Box } from "@mui/material";
 import { useState } from "react";
 
-import PapersSection from "@/components/sections/PapersSection";
+import { PaperList } from "@/components/sections/PapersSection";
+import { usePapers } from "@/hooks/usePapers";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 import type { PaperFilterType } from "@/types/content";
 
@@ -9,6 +11,7 @@ import PaperFilter from "./sections/PaperFilter";
 
 function Papers() {
   const [activeFilter, setActiveFilter] = useState<PaperFilterType>("all");
+  const { displayedPapers } = usePapers({ filterType: activeFilter });
 
   return (
     <>
@@ -26,11 +29,9 @@ function Papers() {
             activeFilter={activeFilter}
             onFilterChange={setActiveFilter}
           />
-          <PapersSection
-            showHeader={false}
-            filterType={activeFilter}
-            disableWrapper
-          />
+          <Box sx={{ flex: 1, width: "100%", minWidth: 0 }}>
+            <PaperList items={displayedPapers} />
+          </Box>
         </FlexBoxBetween>
       </BoxSection>
     </>
