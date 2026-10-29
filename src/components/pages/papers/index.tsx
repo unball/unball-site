@@ -1,9 +1,12 @@
+import PapersSection from "@/components/sections/PapersSection";
+
 import HeroSection from "./sections/HeroSection";
 
 function Papers() {
-  return(
+  return (
     <>
       <HeroSection />
+      <PapersSection showHeader={false} />
     </>
   );
 }

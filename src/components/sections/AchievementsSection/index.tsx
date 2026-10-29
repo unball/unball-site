@@ -5,19 +5,19 @@ import { useTranslatedList } from "@/hooks/useTranslatedList";
 import { BoxSection, Panel } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
+import type { SharedSectionProps } from "../types";
 import { AchievementCarousel } from "./AchievementCarousel";
 
-type AchievementsSectionProps = {
-  title?: string;
-  subtitle?: string;
+export type AchievementsSectionProps = SharedSectionProps & {
   bordered?: "all" | "x" | "y" | "none";
 };
 
 function AchievementsSection({
   title,
   subtitle,
+  showHeader = true,
   bordered = "y",
-}: AchievementsSectionProps) {
+}: AchievementsSectionProps = {}) {
   const { t } = useTranslation();
   const achievementItems = useTranslatedList<AchievementItem>(
     "domain.achievements.items"
@@ -41,11 +41,13 @@ function AchievementsSection({
           overflow: "hidden",
         }}
       >
-        <SectionHeader
-          subtitle={subtitle ?? t("domain.achievements.subtitle")}
-          title={title ?? t("domain.achievements.title")}
-          spacing={1.5}
-        />
+        {showHeader && (
+          <SectionHeader
+            subtitle={subtitle ?? t("domain.achievements.subtitle")}
+            title={title ?? t("domain.achievements.title")}
+            spacing={1.5}
+          />
+        )}
 
         <AchievementCarousel items={achievementItems} />
       </Panel>

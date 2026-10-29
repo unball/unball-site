@@ -6,14 +6,16 @@ import { useTranslatedList } from "@/hooks/useTranslatedList";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 import type { LeagueItem } from "@/types/content";
 
+import type { SharedSectionProps } from "../types";
 import { LeagueCard } from "./LeagueCard";
 
-type LeagueSectionProps = {
-  title?: string;
-  subtitle?: string;
-};
+export type LeagueSectionProps = SharedSectionProps;
 
-function LeagueSection({ title, subtitle }: LeagueSectionProps) {
+function LeagueSection({
+  title,
+  subtitle,
+  showHeader = true,
+}: LeagueSectionProps = {}) {
   const { t } = useTranslation();
   const leagueItems = useTranslatedList<LeagueItem>("domain.league.items");
 
@@ -21,10 +23,12 @@ function LeagueSection({ title, subtitle }: LeagueSectionProps) {
     <BoxSection>
       <FlexBoxBetween sx={{ width: "100%" }}>
         <Stack spacing={2} sx={{ width: "100%" }}>
-          <SectionHeader
-            subtitle={subtitle ?? t("domain.league.subtitle")}
-            title={title ?? t("domain.league.title")}
-          />
+          {showHeader && (
+            <SectionHeader
+              subtitle={subtitle ?? t("domain.league.subtitle")}
+              title={title ?? t("domain.league.title")}
+            />
+          )}
           <Stack
             direction={{ xs: "column", md: "row" }}
             spacing={3}

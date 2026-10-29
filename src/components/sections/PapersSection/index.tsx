@@ -8,9 +8,16 @@ import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection } from "@/shared/styled";
 import type { PaperItem } from "@/types/content";
 
+import type { SharedSectionProps } from "../types";
 import { PaperCard } from "./PaperCard";
 
-function PapersSection() {
+export type PapersSectionProps = SharedSectionProps;
+
+function PapersSection({
+  title,
+  subtitle,
+  showHeader = true,
+}: PapersSectionProps = {}) {
   const { t } = useTranslation();
   const getPath = useLocalizedPath();
   const paperItems = useTranslatedList<PaperItem>("domain.papers.items");
@@ -21,10 +28,12 @@ function PapersSection() {
   return (
     <BoxSection>
       <Stack spacing={2} sx={{ width: "100%" }}>
-        <SectionHeader
-          subtitle={t("pages.home.papers.subtitle")}
-          title={t("pages.home.papers.title")}
-        />
+        {showHeader && (
+          <SectionHeader
+            subtitle={subtitle ?? t("pages.home.papers.subtitle")}
+            title={title ?? t("pages.home.papers.title")}
+          />
+        )}
         <Stack spacing={3} sx={{ width: "100%" }}>
           {displayedItems.map((item) => (
             <PaperCard key={item.id} item={item} />
