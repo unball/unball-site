@@ -24,39 +24,74 @@ export const papers = {
     },
     {
       id: 2,
-      type: "article",
+      type: "tcc",
       title:
-        "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
-      authors: ["Gustavo Silva"],
-      date: "2026-06-15",
-      abstract:
-        "This paper presents the development of a vision-based remote robot control system for the RoboCup@Home League. The system utilizes a combination of computer vision techniques and remote control to enable teleoperation of robots in complex environments. The paper details the architecture of the system, including the camera calibration process, the remote control interface, and the communication protocol. Experimental results demonstrate the effectiveness of the system in enabling precise and intuitive control of robots in simulated and real-world scenarios.",
-      url: "https://ieeexplore.ieee.org/document/10607231",
+        "Análise de viabilidade do uso de motor brushless controlado por Field-Oriented Control para o projeto de robô omnidirecional",
+      authors: ["Martins, Maria Cláudia Campos"],
+      date: "2026-07-24",
+      abstract: 
+      "Este trabalho apresenta o desenvolvimento de um protótipo de robô omnidirecional direcio nado à Small Size League da RoboCup, empregando o driver MKS ESP32 Dual FOC V1.0 em um motor BLDC, aliado à biblioteca SimpleFOC. O controle de velocidade, implementado com o PID da própria biblioteca, apresentou desempenho satisfatório, indicando a viabili dade dos motores, embora tenham sido observados elevados níveis de ruído nas medições, sugerindo a necessidade de avaliar outros drivers. Também é proposta uma primeira versão modular do robô, que viabilizou os primeiros testes de movimentação omnidirecional além de facilitar procedimentos de montagem e manutenção, ainda que demande aprimoramentos em futuras iterações do projeto.",
+      url: "https://bdm.unb.br/handle/10483/45129",
       tags: [
-        "RoboCup@Home",
-        "Vision-based Control",
-        "Remote Operation",
-        "Computer Vision",
+        "Robótica",
+        "Robôs omnidirecionais",
+        "Robôs móveis",
+        "Motores",
+        "Motores de corrente contínua",
       ],
-      ctaText: "Baixar arquivo",
+      ctaText: "Abrir Link",
     },
     {
       id: 3,
       type: "tcc",
       title:
-        "Self-Calibrating Vision-Based Remote Robot Control for the RoboCup@Home League",
-      authors: ["Gustavo Silva"],
-      date: "2026-06-15",
+        "	Aprendizagem por reforço no contexto de futebol de robôs : Robocup Soccer Simulation 2D",
+      authors: ["Dantas, Bruno Andreghetti",
+        "Oliveira, Samuel Venzi Lima Monteiro de"],
+      date: "2022-05-03",
       abstract:
-        "This paper presents the development of a vision-based remote robot control system for the RoboCup@Home League. The system utilizes a combination of computer vision techniques and remote control to enable teleoperation of robots in complex environments. The paper details the architecture of the system, including the camera calibration process, the remote control interface, and the communication protocol. Experimental results demonstrate the effectiveness of the system in enabling precise and intuitive control of robots in simulated and real-world scenarios.",
-      url: "https://ieeexplore.ieee.org/document/10607231",
+        "O cenário da aprendizagem de máquina tem crescido cada vez mais nos últimos anos. Junto a isso, iniciativas como a RoboCup buscam incentivar a aplicação dessas técnicas fomentando um cenário competitivo de futebol de robôs. Com a motivação de aumentar a diversidade de ferramentas dentro da categoria RoboCup Soccer Simulation 2D, nesse trabalho foi desenvolvida uma nova plataforma de desenvolvimento e são aplicadas técnicas de aprendizagem por reforço a fim de validá-la. Foram realizados experimentos com técnicas estabelecidas como SarsaeQ-Learning duplo tendo como objetivo realizar o maior número de gols possíveis durante o período de uma partida. As técnicas utilizadas validaram o funcionamento da plataforma desenvolvida ea utilização de comportamentos pré-programados aliado aQ-Learning duplo obteve uma política que alcançou gols consistentemente.",
+      url: "https://bdm.unb.br/handle/10483/30566",
       tags: [
-        "RoboCup@Home",
-        "Vision-based Control",
-        "Remote Operation",
-        "Computer Vision",
+        "Aprendizado de máquina",
+        "Robótica",
+        "Robôs autônomos",
       ],
-      ctaText: "Baixar arquivo",
+      ctaText: "Abrir Link",
+    },
+    {
+      id: 4,
+      type: "tcc",
+      title:
+        "Aprendizado por reforço aplicado à categoria VSSS de futebol de robôs",
+        authors: ["Rabelo, Hiago dos Santos"],
+        date: "2024-07-10",
+        abstract: 
+          "	O aprendizado por reforço é um dos campos de aprendizado de máquina que está ganhando bastante destaque atualmente, especialmente com a utilização de redes neurais e a obtenção de resultados que superam valores obtidos por seres humanos. Devido a isso, há um grande espaço para sua aplicação na robótica. Este trabalho tem como objetivo utilizar técnicas de aprendizado de máquina para obter um agente capaz de realizar gols em uma partida de futebol de robôs. Será utilizado o algoritmo atual da equipe UnBall como referência para comparação nos resultados numéricos. A UnBall é um projeto de extensão da UnB que compete com foco em futebol de robôs autônomos na categoria Very Small Size Soccer (VSSS). Este trabalho possui foco na utilização dos algoritmos Deep Deterministic Policy Gradient (DDPG) e Twin Delayed DDPG (TD3). Embora os agentes obtidos por aprendizado por reforço possam não superar o algoritmo atualmente utilizado pela equipe UnBall, os resultados obtidos indicam que são efetivos na realização da tarefa de direcionar a bola até o gol.",
+        url: "https://bdm.unb.br/handle/10483/39227",
+        tags: [
+          "Robôs",
+          "Aprendizado por reforço",
+          "Futebol",
+        ],
+        ctaText: "Abrir Link",
+    },
+    {
+      id: 5,
+      type: "tcc",
+      title:
+        "Detecção de objetos very small size soccer utilizando redes convolucionais YOLO",
+        authors: ["Marques, Ayssa Giovanna de Oliveira"],
+        date: "2025-03-21",
+        abstract: 
+          "O sistema visual humano analisa uma imagem e, com base em seu conhecimento prévio sobre as características de determinados objetos, identifica quase instantaneamente quais objetos estão presentes, suas localizações e como eles interagem entre si. Algoritmos rápidos e precisos para detecção de objetos podem se aproximar da eficácia da visão humana, permitindo que computadores dirijam carros sem sensores especializados, dispositivos de assistência transmitam informações em tempo real da cena para usuários humanos e desbloqueiem o potencial para sistemas robóticos de uso geral e responsivos. E por que não jogar futebol? Este trabalho propõe uma abordagem para a detecção de objetos em partidas de futebol de robôs da categoria IEEE Very Small Size Soccer (VSSS), utilizando redes neurais convolucionais da família You Only Look Once (YOLO), especificamente a versão YOLOv8-pose. O projeto envolveu a criação de um banco de imagens a partir de vídeos de partidas da IronCup 2020, onde foram anotados os pontos-chave dos robôs e da bola para treinamento do modelo. Foram realizados treinamentos com diferentes variantes do YOLOv8-pose (nano, small, medium, large e extra-large), variando o número de épocas para avaliar a precisão e a perda do modelo. O modelo YOLOv8x-pose demonstrou o melhor desempenho, com menor perda e maior precisão na detecção dos objetos e cálculo da orientação dos robôs. Os resultados mostraram que o sistema proposto, denominado Ballnet Pose, superou o Main System em termos de precisão na localização dos objetos e no cálculo da orientação dos robôs.",
+        url: "https://bdm.unb.br/handle/10483/41606",
+        tags: [
+          "Redes neurais convolucionais (Computação)",
+          "Aprendizado de máquina",
+          "Visão por computador",
+        ],
+        ctaText: "Abrir Link",
     },
   ],
 };
