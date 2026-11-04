@@ -12,7 +12,15 @@ export function usePapers({
   filterType = "all",
   limit,
 }: UsePapersOptions = {}) {
-  const allPapers = useTranslatedList<PaperItem>("domain.papers.items");
+  const rawPapers = useTranslatedList<PaperItem>("domain.papers.items");
+
+  const allPapers = useMemo(
+    () =>
+      [...rawPapers].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      ),
+    [rawPapers],
+  );
 
   const filteredPapers = useMemo(() => {
     if (!filterType || filterType === "all") return allPapers;
