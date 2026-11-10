@@ -8,6 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -15,74 +16,41 @@ import Logo from "@/assets/images/logos/unball-logo.png";
 import { useNavItems } from "@/hooks/useNavItems";
 import { useTranslatedList } from "@/hooks/useTranslatedList";
 import { FlexBoxBetween } from "@/shared/styled";
-import type { InstitutionalItem } from "@/types/content";
+import type {
+  ContactItem,
+  ContactType,
+  InstitutionalItem,
+} from "@/types/content";
 
-const SOCIAL_LINKS = [
-  {
-    key: "email",
-    label: "E-mail",
-    href: "mailto:equipeunball@gmail.com",
-    icon: <Email fontSize="small" />,
+const CONTACT_ICONS: Record<ContactType, ReactNode> = {
+  email: <Email fontSize="small" />,
+  github: <GitHub fontSize="small" />,
+  instagram: <Instagram fontSize="small" />,
+  linkedin: <LinkedIn fontSize="small" />,
+};
+
+const FOOTER_LINK_SX = {
+  color: "text.secondary",
+  textDecoration: "none",
+  transition: "color 0.2s ease-in-out",
+  "&:hover": {
+    color: "text.primary",
   },
-  {
-    key: "github",
-    label: "GitHub",
-    href: "https://github.com/unball",
-    icon: <GitHub fontSize="small" />,
-  },
-  {
-    key: "instagram",
-    label: "Instagram",
-    href: "https://www.instagram.com/equipe.unball/",
-    icon: <Instagram fontSize="small" />,
-  },
-  {
-    key: "linkedin",
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/company/unball/",
-    icon: <LinkedIn fontSize="small" />,
-  },
-];
+} as const;
+
+function externalLinkProps(href: string) {
+  return href.startsWith("mailto:")
+    ? { href }
+    : { href, target: "_blank", rel: "noopener noreferrer" };
+}
 
 function Footer() {
   const { t } = useTranslation();
   const navItems = useNavItems();
+  const contactItems = useTranslatedList<ContactItem>("domain.contact.items");
   const institutionalItems = useTranslatedList<InstitutionalItem>(
     "footer.institutional"
   );
-
-  const contactLines = [
-    {
-      key: "location",
-      label: `${t("footer.labels.location")}:`,
-      value: t("footer.locationValue"),
-      href: null,
-    },
-    {
-      key: "email",
-      label: `${t("footer.labels.email")}:`,
-      value: "equipeunball@gmail.com",
-      href: "mailto:equipeunball@gmail.com",
-    },
-    {
-      key: "github",
-      label: `${t("footer.labels.github")}:`,
-      value: "github.com/unball",
-      href: "https://github.com/unball",
-    },
-    {
-      key: "instagram",
-      label: `${t("footer.labels.instagram")}:`,
-      value: "@equipe.unball",
-      href: "https://www.instagram.com/equipe.unball/",
-    },
-    {
-      key: "linkedin",
-      label: `${t("footer.labels.linkedin")}:`,
-      value: "/company/equipe-unball",
-      href: "https://www.linkedin.com/company/unball/",
-    },
-  ];
 
   return (
     <Box
@@ -115,17 +83,30 @@ function Footer() {
                 UNBALL
               </Typography>
             </Stack>
-            <Stack spacing={1.25}>
-              {contactLines.map((line) => (
+            <Stack
+              spacing={1.25}
+              sx={(theme) => ({
+                fontFamily: theme.typography.fontFamilyMono,
+                color: "text.secondary",
+              })}
+            >
+              <Typography variant="body2" sx={{ fontFamily: "inherit" }}>
+                {t("footer.labels.location")}: {t("footer.locationValue")}
+              </Typography>
+              {contactItems.map((item) => (
                 <Typography
-                  key={line.key}
+                  key={item.type}
                   variant="body2"
-                  sx={(theme) => ({
-                    fontFamily: theme.typography.fontFamilyMono,
-                    color: "text.secondary",
-                  })}
+                  sx={{ fontFamily: "inherit" }}
                 >
-                  {line.label} {line.value}
+                  {t(`footer.labels.${item.type}`)}:{" "}
+                  <Box
+                    component="a"
+                    {...externalLinkProps(item.link)}
+                    sx={FOOTER_LINK_SX}
+                  >
+                    {item.value}
+                  </Box>
                 </Typography>
               ))}
             </Stack>
@@ -150,14 +131,7 @@ function Footer() {
                   key={item.key}
                   component={Link}
                   to={item.path}
-                  sx={{
-                    color: "text.secondary",
-                    textDecoration: "none",
-                    transition: "color 0.2s ease-in-out",
-                    "&:hover": {
-                      color: "text.primary",
-                    },
-                  }}
+                  sx={FOOTER_LINK_SX}
                 >
                   {item.label}
                 </Typography>
@@ -183,17 +157,8 @@ function Footer() {
                 <Typography
                   key={item.label}
                   component="a"
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: "text.secondary",
-                    textDecoration: "none",
-                    transition: "color 0.2s ease-in-out",
-                    "&:hover": {
-                      color: "text.primary",
-                    },
-                  }}
+                  {...externalLinkProps(item.href)}
+                  sx={FOOTER_LINK_SX}
                 >
                   {item.label}
                 </Typography>
@@ -219,13 +184,11 @@ function Footer() {
           {t("footer.bottomText")}
         </Typography>
         <Stack direction="row" spacing={1.25}>
-          {SOCIAL_LINKS.map((social) => (
+          {contactItems.map((item) => (
             <IconButton
-              key={social.key}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
+              key={item.type}
+              {...externalLinkProps(item.link)}
+              aria-label={item.title}
               sx={(theme) => ({
                 color: "text.primary",
                 transition:
@@ -237,7 +200,7 @@ function Footer() {
                 },
               })}
             >
-              {social.icon}
+              {CONTACT_ICONS[item.type]}
             </IconButton>
           ))}
         </Stack>

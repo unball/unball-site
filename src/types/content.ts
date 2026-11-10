@@ -55,6 +55,15 @@ export type InstitutionalItem = {
   href: string;
 };
 
+export type ContactType = "email" | "github" | "instagram" | "linkedin";
+
+export type ContactItem = {
+  type: ContactType;
+  title: string;
+  value: string;
+  link: string;
+};
+
 export type TimelineItem = {
   date: string;
   title: string;
