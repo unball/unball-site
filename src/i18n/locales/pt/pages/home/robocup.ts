@@ -1,18 +1,8 @@
 export const robocup = {
   title: "FUTEBOL DE ROBÔS",
   subtitle: "// COMO FUNCIONA A MODALIDADE",
-  description: `
-        A RoboCup é a maior iniciativa de pesquisa em robótica e
-        inteligência artificial do mundo. O grande desafio global (Meta
-        2050) é desenvolver um time de robôs humanoides totalmente
-        autônomos capaz de vencer os campeões humanos da Copa do
-        Mundo da FIFA.
-
-        Nesse ecossistema, projetamos robôs que operam sem
-        intervenção humana durante as partidas. As câmeras leem o
-        campo, os algoritmos calculam a física do jogo, e os motores
-        executam passes e chutes em milissegundos.
-    `,
+  description:
+    "A RoboCup é a maior iniciativa de pesquisa em robótica e inteligência artificial do mundo. O grande desafio global (Meta 2050) é desenvolver um time de robôs humanoides totalmente autônomos capaz de vencer os campeões humanos da Copa do Mundo da FIFA.\n\nNesse ecossistema, projetamos robôs que operam sem intervenção humana durante as partidas. As câmeras leem o campo, os algoritmos calculam a física do jogo, e os motores executam passes e chutes em milissegundos.",
   workAreas: {
     title: "ÁREAS DE TRABALHO",
     items: [

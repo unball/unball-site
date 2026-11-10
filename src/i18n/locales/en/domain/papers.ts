@@ -13,13 +13,9 @@ export const papers = {
       authors: ["Sanches, André Dornelas"],
       date: "2026-07-24",
       abstract:
-        "This work presents the development of an embedded system for the kinematic control of a nonholonomic differential-drive mobile robot designed to compete in robotics tourna ments in the Very Small Size Soccer (VSSS) category. The project encompasses the definition of the electronic architecture and the implementation of digital control strategies on an ESP32 microcontroller. The embedded platform integrates DC motors with optical encoders, an inertial measurement unit, and a dedicated motor driver, all arranged on a compact printed circuit board designed to meet the physical constraints of the competition. The system receives wireless commands of linear and angular velocities and processes sensor measurements to execute motion control. The development included the modeling of the robot’s dynamics and the experimental identification of actuator parameters, leading to a cascade-control architecture in which a Model Reference Adaptive Controller (MRAC) regulates individual wheel velocities while a higher-level controller commands the robot’s linear and angular motion. Two approaches were evaluated at this upper level, based on PID control and state-feedback control. Experimental results demonstrated that the implemented controllers were able to track velocity references in a stable and repeatable manner, con firming the effective integration between hardware design, system modeling, and embedded control algorithms.",
+        "This work presents the development of an embedded system for the kinematic control of a nonholonomic differential-drive mobile robot designed to compete in robotics tournaments in the Very Small Size Soccer (VSSS) category. The project encompasses the definition of the electronic architecture and the implementation of digital control strategies on an ESP32 microcontroller. The embedded platform integrates DC motors with optical encoders, an inertial measurement unit, and a dedicated motor driver, all arranged on a compact printed circuit board designed to meet the physical constraints of the competition. The system receives wireless commands of linear and angular velocities and processes sensor measurements to execute motion control. The development included the modeling of the robot’s dynamics and the experimental identification of actuator parameters, leading to a cascade-control architecture in which a Model Reference Adaptive Controller (MRAC) regulates individual wheel velocities while a higher-level controller commands the robot’s linear and angular motion. Two approaches were evaluated at this upper level, based on PID control and state-feedback control. Experimental results demonstrated that the implemented controllers were able to track velocity references in a stable and repeatable manner, confirming the effective integration between hardware design, system modeling, and embedded control algorithms.",
       url: "https://bdm.unb.br/handle/10483/45124",
-      tags: [
-        "Robotics",
-        "Robots",
-        "Mobile robots",
-      ],
+      tags: ["Robotics", "Robots", "Mobile robots"],
       ctaText: "Open link",
     },
     {
@@ -30,7 +26,7 @@ export const papers = {
       authors: ["Martins, Maria Cláudia Campos"],
       date: "2026-07-24",
       abstract:
-      "This work presents the development of a prototype of an omnidirectional robot designed for the RoboCup Small Size League, employing the MKS ESP32 Dual FOC V1.0 driver in a BLDC motor, together with the SimpleFOC library. The speed control, implemented using the library’s built-in PID, showed satisfactory performance, indicating the feasibility of the motors, although high noise levels were observed in the current measurements, suggesting the need to evaluate alternative drivers. Furthermore, a first modular version of the robot is proposed, enabling the initial tests of omnidirectional motion and facilitating assembly and maintenance procedures, although improvements are still required in future iterations of the project.",
+        "This work presents the development of a prototype of an omnidirectional robot designed for the RoboCup Small Size League, employing the MKS ESP32 Dual FOC V1.0 driver in a BLDC motor, together with the SimpleFOC library. The speed control, implemented using the library’s built-in PID, showed satisfactory performance, indicating the feasibility of the motors, although high noise levels were observed in the current measurements, suggesting the need to evaluate alternative drivers. Furthermore, a first modular version of the robot is proposed, enabling the initial tests of omnidirectional motion and facilitating assembly and maintenance procedures, although improvements are still required in future iterations of the project.",
       url: "https://bdm.unb.br/handle/10483/45129",
       tags: [
         "Robotics",
@@ -52,13 +48,9 @@ export const papers = {
       ],
       date: "2022-05-03",
       abstract:
-        "The machine learning field has been increasingly growing over the last few years. Furthermore,scientific initiatives such as RoboCup seek to promote studies and applications of these techniquesby nurturing a competitive environment for robot soccer. In this project, with the motivationof expanding the diversity of tools in the RoboCup Soccer Simulation 2D category, a new deve-lopment platform was created and reinforcement learning techniques were applied to validate it.Experiments were run using established techniques, such as Sarsa and Double Q-Learning, withthe goal of scoring as many goals as possible during a match period. The techniques used validatedthe platform’s operation and the use of pre-programmed behaviors along with Double Q-Learningresulted in a policy capable of consistently scoring goals.",
+        "The machine learning field has been increasingly growing over the last few years. Furthermore, scientific initiatives such as RoboCup seek to promote studies and applications of these techniques by nurturing a competitive environment for robot soccer. In this project, with the motivation of expanding the diversity of tools in the RoboCup Soccer Simulation 2D category, a new development platform was created and reinforcement learning techniques were applied to validate it. Experiments were run using established techniques, such as Sarsa and Double Q-Learning, with the goal of scoring as many goals as possible during a match period. The techniques used validated the platform’s operation and the use of pre-programmed behaviors along with Double Q-Learning resulted in a policy capable of consistently scoring goals.",
       url: "https://bdm.unb.br/handle/10483/30566",
-      tags: [
-        "Machine learning",
-        "Robotics",
-        "Autonomous robots",
-      ],
+      tags: ["Machine learning", "Robotics", "Autonomous robots"],
       ctaText: "Open link",
     },
     {
@@ -71,11 +63,7 @@ export const papers = {
       abstract:
         "Reinforcement learning is one of the fields of machine learning that is gaining considerable attention, especially with the use of neural networks and achieving results that outperform those obtained by humans. As a result, there is significant potential for its application in robotics. This work aims to utilize machine learning techniques to obtain an agent capable of scoring goals in a robot soccer game. The current algorithm of the UnBall team will be used as a reference for comparison in the numerical results. UnBall is an extension project of UnB that competes with a focus on autonomous robot soccer in the Very Small Size Soccer (VSSS) category. This work will focus on the utilization of Deep Deterministic Policy Gradient (DDPG) and Twin Delayed DDPG (TD3) algorithms. Although the agents obtained through reinforcement learning may not outperform the algorithm currently used by the UnBall team, they are expected to be effective in directing the ball toward the goal.",
       url: "https://bdm.unb.br/handle/10483/39227",
-      tags: [
-        "Robots",
-        "Reinforcement learning",
-        "Soccer",
-      ],
+      tags: ["Robots", "Reinforcement learning", "Soccer"],
       ctaText: "Open link",
     },
     {

@@ -1,13 +1,8 @@
 export const robocup = {
   title: "ROBOT SOCCER",
   subtitle: "// HOW THE CATEGORY WORKS",
-  description: `
-        RoboCup is the world's largest research initiative in robotics and
-        artificial intelligence. The global challenge (Target 2050) is to develop
-        a team of fully autonomous humanoid robots capable of winning against the FIFA World Cup human champions.
-
-        In this ecosystem, we design robots that operate without human intervention during matches. Cameras read the field, algorithms compute game physics, and motors execute passes and kicks in milliseconds.
-    `,
+  description:
+    "RoboCup is the world's largest research initiative in robotics and artificial intelligence. The global challenge (Target 2050) is to develop a team of fully autonomous humanoid robots capable of winning against the FIFA World Cup human champions.\n\nIn this ecosystem, we design robots that operate without human intervention during matches. Cameras read the field, algorithms compute game physics, and motors execute passes and kicks in milliseconds.",
   workAreas: {
     title: "WORK AREAS",
     items: [

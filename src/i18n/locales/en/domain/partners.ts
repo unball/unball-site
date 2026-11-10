@@ -1,19 +1,19 @@
 export const partners = {
   items: [
     {
-      type: "INSTITUCIONAL",
+      type: "INSTITUTIONAL",
       name: "Faculty of Technology",
       logoUrl: "/images/logos/ft_logo.svg",
       url: "http://ft.unb.br",
     },
     {
-      type: "INSTITUCIONAL",
+      type: "INSTITUTIONAL",
       name: "Institute of Exact Sciences",
       logoUrl: "/images/logos/ie_logo.svg",
       url: "https://exatas.unb.br",
     },
     {
-      type: "INSTITUCIONAL",
+      type: "INSTITUTIONAL",
       name: "University of Brasília",
       logoUrl: "/images/logos/unb_logo.svg",
       url: "https://www.unb.br",

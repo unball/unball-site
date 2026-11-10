@@ -1,6 +1,6 @@
 import type { SxProps, Theme } from "@mui/material";
 import { Stack, Typography } from "@mui/material";
-import React from "react";
+import type { ReactNode } from "react";
 
 export interface SectionHeaderProps {
   subtitle?: string;
@@ -11,8 +11,14 @@ export interface SectionHeaderProps {
   spacing?: number;
   align?: "left" | "center" | "right";
   sx?: SxProps<Theme>;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
+
+const ALIGNMENT_MAP = {
+  left: "flex-start",
+  center: "center",
+  right: "flex-end",
+} as const;
 
 export function SectionHeader({
   subtitle,
@@ -25,19 +31,13 @@ export function SectionHeader({
   sx,
   children,
 }: SectionHeaderProps) {
-  const alignmentMap = {
-    left: "flex-start",
-    center: "center",
-    right: "flex-end",
-  } as const;
-
   return (
     <Stack
       component="header"
       spacing={spacing}
       sx={[
         {
-          alignItems: alignmentMap[align],
+          alignItems: ALIGNMENT_MAP[align],
           textAlign: align,
         },
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -52,7 +52,9 @@ export function SectionHeader({
         {title}
       </Typography>
       {description && (
-        <Typography color="text.secondary">{description}</Typography>
+        <Typography color="text.secondary" sx={{ whiteSpace: "pre-line" }}>
+          {description}
+        </Typography>
       )}
       {children}
     </Stack>
