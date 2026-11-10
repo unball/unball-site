@@ -7,7 +7,7 @@ export type YearBadgeProps = {
 
 export function YearBadge({ date }: YearBadgeProps) {
   const { t } = useTranslation();
-  const year: number = date.getFullYear();
+  const year = date.getUTCFullYear();
 
   return (
     <Stack
