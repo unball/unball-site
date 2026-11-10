@@ -14,8 +14,6 @@ function WorkAreaDescription({ workArea }: WorkAreaDescriptionProps) {
     <Panel
       bordered="all"
       sx={{
-        justifyContent: "center",
-        alignItems: "center",
         paddingX: { xs: 2, sm: 3 },
         paddingY: { xs: 2, sm: 2.5 },
       }}

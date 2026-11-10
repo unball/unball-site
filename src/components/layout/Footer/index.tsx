@@ -167,12 +167,7 @@ function Footer() {
           </Stack>
         </Grid>
       </Grid>
-      <Divider
-        sx={(theme) => ({
-          my: 6,
-          borderColor: alpha(theme.palette.border.subtle, 0.4),
-        })}
-      />
+      <Divider sx={{ my: 6, borderColor: "border.subtle" }} />
       <FlexBoxBetween>
         <Typography
           sx={(theme) => ({

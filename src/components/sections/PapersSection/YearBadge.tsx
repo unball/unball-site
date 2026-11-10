@@ -12,7 +12,6 @@ export function YearBadge({ date }: YearBadgeProps) {
   return (
     <Stack
       sx={{
-        display: "block",
         width: "fit-content",
         alignItems: "center",
         justifyContent: "center",

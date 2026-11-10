@@ -1,6 +1,7 @@
 import { alpha, Button, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+import { NAVBAR_HEIGHT } from "@/theme";
 import type { PaperFilterType } from "@/types/content";
 
 export type { PaperFilterType };
@@ -32,12 +33,13 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
     <Stack
       direction={{ xs: "row", md: "column" }}
       spacing={1.5}
-      sx={{
+      sx={(theme) => ({
         flexWrap: { xs: "wrap", md: "nowrap" },
         width: { xs: "100%", md: "180px", lg: "220px" },
         flexShrink: 0,
-        top: { md: 100 },
-      }}
+        position: { md: "sticky" },
+        top: { md: `calc(${NAVBAR_HEIGHT}px + ${theme.spacing(9)})` },
+      })}
     >
       {FILTER_OPTIONS.map((option) => {
         const isActive = activeFilter === option.key;

@@ -22,11 +22,10 @@ export function PaperList({ items, emptyMessage }: PaperListProps) {
           border: 1,
           borderColor: "border.subtle",
           color: "text.secondary",
-          fontFamily: "fontFamilyMono",
           width: "100%",
         }}
       >
-        <Typography variant="body1">
+        <Typography variant="body1" sx={{ fontFamily: "fontFamilyMono" }}>
           {emptyMessage ??
             t(
               "domain.papers.empty",
