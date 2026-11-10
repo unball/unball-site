@@ -46,6 +46,7 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
         return (
           <Button
             key={option.key}
+            aria-pressed={isActive}
             onClick={() => onFilterChange(option.key)}
             sx={(theme) => ({
               fontFamily: theme.typography.fontFamilyMono,

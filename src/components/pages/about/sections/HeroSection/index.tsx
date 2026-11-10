@@ -19,6 +19,7 @@ function HeroSection() {
         <SectionHeader
           title={t("pages.about.hero.title")}
           description={t("domain.about.description")}
+          titleVariant="h1"
         />
         <SectionImage src={Logo} alt={t("pages.about.hero.imageAlt")} />
       </FlexBoxBetween>

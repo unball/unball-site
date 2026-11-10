@@ -1,4 +1,5 @@
 import type { ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { getEquivalentPath, type SupportedLang } from "@/i18n/routesMap";
@@ -7,6 +8,7 @@ import { useCurrentLang } from "@/i18n/useLocalizedPath";
 import { StyledSwitch } from "./StyledSwitch";
 
 export function LanguageSwitch() {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,5 +20,15 @@ export function LanguageSwitch() {
     navigate(getEquivalentPath(location.pathname, targetLang));
   };
 
-  return <StyledSwitch checked={isEn} onChange={handleChange} />;
+  return (
+    <StyledSwitch
+      checked={isEn}
+      onChange={handleChange}
+      slotProps={{
+        input: {
+          "aria-label": t("navbar.toggleLanguage"),
+        },
+      }}
+    />
+  );
 }

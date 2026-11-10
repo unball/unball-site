@@ -7,4 +7,5 @@ export const navbar = {
   logoAlt: "UnBall logo",
   openMenu: "Open menu",
   closeMenu: "Close menu",
+  toggleLanguage: "Toggle language",
 };

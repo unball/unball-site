@@ -144,6 +144,9 @@ function ContactForm() {
                 input: {
                   readOnly: true,
                 },
+                htmlInput: {
+                  "aria-label": t("domain.contact.form.commandLabel"),
+                },
               }}
             />
 

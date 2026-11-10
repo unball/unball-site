@@ -5,8 +5,12 @@ import {
   Typography,
 } from "@mui/material";
 import { alpha, styled, type Theme } from "@mui/material/styles";
+import { type ElementType, useId } from "react";
 
-const LabelText = styled(Typography)(({ theme }) => ({
+const LabelText = styled(Typography)<{
+  component?: ElementType;
+  htmlFor?: string;
+}>(({ theme }) => ({
   fontFamily: theme.typography.fontFamilyMono,
   fontWeight: "bold",
   fontSize: "0.625rem",
@@ -15,6 +19,7 @@ const LabelText = styled(Typography)(({ theme }) => ({
 }));
 
 export function StyledTextField({
+  id,
   label,
   variant = "standard",
   fullWidth = true,
@@ -22,17 +27,22 @@ export function StyledTextField({
   slotProps,
   ...props
 }: TextFieldProps) {
+  const generatedId = useId();
+  const inputId = id ?? generatedId;
+  const labelId = `${inputId}-label`;
+
   const defaultSelectSlotProps = select
     ? {
         select: {
           displayEmpty: true,
+          labelId: label ? labelId : undefined,
           MenuProps: {
             slotProps: {
               paper: {
                 sx: {
                   backgroundColor: "background.paper",
-                  border: (theme: Theme) =>
-                    `1px solid ${alpha(theme.palette.secondary.main, 0.3)}`,
+                  border: 1,
+                  borderColor: "border.main",
                   color: "text.primary",
                   "& .MuiMenuItem-root": {
                     fontFamily: (theme: Theme) =>
@@ -62,6 +72,7 @@ export function StyledTextField({
 
   const inputComponent = (
     <TextField
+      id={inputId}
       variant={variant}
       fullWidth={fullWidth}
       select={select}
@@ -73,12 +84,12 @@ export function StyledTextField({
   if (label) {
     return (
       <Stack spacing={1}>
-        <LabelText>{label}</LabelText>
+        <LabelText id={labelId} component="label" htmlFor={inputId}>
+          {label}
+        </LabelText>
         {inputComponent}
       </Stack>
     );
   }
   return inputComponent;
 }
-
-export default StyledTextField;

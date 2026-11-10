@@ -1,6 +1,7 @@
 export const contact = {
   form: {
     command: "> ./start_communication.sh",
+    commandLabel: "Terminal command",
     name: "NAME",
     namePlaceholder: "Visitor",
     email: "EMAIL",
