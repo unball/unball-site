@@ -1,6 +1,12 @@
 export const SUPPORTED_LANGS = ["pt", "en"] as const;
 export type SupportedLang = (typeof SUPPORTED_LANGS)[number];
 
+export function isSupportedLang(
+  lang: string | undefined
+): lang is SupportedLang {
+  return SUPPORTED_LANGS.includes(lang as SupportedLang);
+}
+
 export interface RouteDefinition {
   key: string;
   paths: Record<SupportedLang, string>;

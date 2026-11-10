@@ -8,15 +8,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Layout from "@/components/layout/Layout";
+import About from "@/components/pages/about";
+import Contact from "@/components/pages/contact";
+import Home from "@/components/pages/home";
+import Papers from "@/components/pages/papers";
+import Partners from "@/components/pages/partners";
 import LanguageGuard from "@/i18n/LanguageGuard";
 import { type RouteKey, ROUTES, SUPPORTED_LANGS } from "@/i18n/routesMap";
-
-import Layout from "./components/layout/Layout";
-import About from "./components/pages/about";
-import Contact from "./components/pages/contact";
-import Home from "./components/pages/home";
-import Papers from "./components/pages/papers";
-import Partners from "./components/pages/partners";
 
 const PAGES: Record<RouteKey, ReactElement> = {
   home: <Home />,
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
         element: <LanguageGuard />,
         children: [
           ...pageRoutes,
-          { path: "*", element: <Navigate to="/pt" replace /> },
+          { path: "*", element: <Navigate to=".." relative="path" replace /> },
         ],
       },
       { path: "*", element: <Navigate to="/pt" replace /> },
