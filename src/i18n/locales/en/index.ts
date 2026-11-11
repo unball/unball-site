@@ -6,6 +6,10 @@ import { pages } from "./pages";
 export const en = {
   navbar,
   footer,
+  systemStatus: {
+    label: "SYS.STATUS:",
+    value: "ONLINE",
+  },
   pages,
   domain,
 };

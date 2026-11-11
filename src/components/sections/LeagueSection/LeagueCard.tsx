@@ -6,6 +6,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import { TagCard } from "@/components/common/TagCard";
 import { FlexBoxBetween } from "@/shared/styled";
@@ -16,6 +17,8 @@ export type LeagueCardProps = {
 };
 
 export function LeagueCard({ item }: LeagueCardProps) {
+  const { t } = useTranslation();
+
   return (
     <Card>
       <Box
@@ -34,7 +37,8 @@ export function LeagueCard({ item }: LeagueCardProps) {
           variant="h4"
           sx={{ fontSize: { xs: "0.55rem", sm: "0.625rem" } }}
         >
-          CAT:{item.shortName}
+          {t("domain.league.categoryPrefix")}
+          {item.shortName}
         </Typography>
       </Box>
       <CardHeader

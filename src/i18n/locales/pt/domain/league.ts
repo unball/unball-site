@@ -1,6 +1,7 @@
 export const league = {
   subtitle: "// CATEGORIAS ATIVAS",
   title: "LIGAS DISPUTADAS",
+  categoryPrefix: "CAT:",
   items: [
     {
       name: "VSSS — VERY SMALL SIZE SOCCER",

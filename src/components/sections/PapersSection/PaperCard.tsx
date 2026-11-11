@@ -88,7 +88,7 @@ export function PaperCard({ item }: PaperCardProps) {
                   fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
                 }}
               >
-                {t("domain.papers.authorsLabel", "AUTORES:")}{" "}
+                {t("domain.papers.authorsLabel")}{" "}
                 {Array.isArray(item.authors) && item.authors.join(", ")}
               </Typography>
             }
@@ -119,12 +119,15 @@ export function PaperCard({ item }: PaperCardProps) {
                   minWidth: 0,
                   fontSize: { xs: "0.75rem", sm: "0.875rem" },
                   textTransform: "none",
-                  "&:hover": { backgroundColor: "transparent", textDecoration: "underline" },
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    textDecoration: "underline",
+                  },
                 }}
               >
                 {expanded
-                  ? t("domain.papers.readLess", "Leia menos")
-                  : t("domain.papers.readMore", "Leia mais")}
+                  ? t("domain.papers.readLess")
+                  : t("domain.papers.readMore")}
               </Button>
             )}
           </CardContent>

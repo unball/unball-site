@@ -69,7 +69,7 @@ function Footer() {
             <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
               <img
                 src={Logo}
-                alt={t("navbar.logoAlt", "UnBall Logo")}
+                alt={t("navbar.logoAlt")}
                 width={32}
                 height={32}
               />

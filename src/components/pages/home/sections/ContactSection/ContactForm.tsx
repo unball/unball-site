@@ -125,7 +125,7 @@ function ContactForm() {
               <ColoredCircle color={theme.palette.success.main} />
             </Stack>
             <Typography variant="h6" sx={{ fontSize: "0.625rem" }}>
-              TERMINAL_SECURE
+              {t("domain.contact.form.terminalTitle")}
             </Typography>
           </Stack>
         }

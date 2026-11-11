@@ -26,11 +26,7 @@ export function PaperList({ items, emptyMessage }: PaperListProps) {
         }}
       >
         <Typography variant="body1" sx={{ fontFamily: "fontFamilyMono" }}>
-          {emptyMessage ??
-            t(
-              "domain.papers.empty",
-              "Nenhuma publicação encontrada para o filtro selecionado."
-            )}
+          {emptyMessage ?? t("domain.papers.empty")}
         </Typography>
       </Box>
     );

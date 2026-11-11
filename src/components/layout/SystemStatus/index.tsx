@@ -1,4 +1,5 @@
 import { alpha, Box, Typography, useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import { useMousePosition } from "@/hooks/useMousePosition";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
@@ -6,6 +7,7 @@ import { FlexBoxBetween } from "@/shared/styled";
 import { NAVBAR_HEIGHT } from "@/theme";
 
 function SystemStatus() {
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("md"));
   const mouse = useMousePosition(isDesktop);
   const scroll = useScrollPosition(!isDesktop);
@@ -32,9 +34,9 @@ function SystemStatus() {
         X: {coords.x.toFixed(2)} / Y: {coords.y.toFixed(2)}
       </Typography>
       <Typography>
-        SYS.STATUS:{" "}
+        {t("systemStatus.label")}{" "}
         <Box component="span" sx={{ color: "success.main" }}>
-          ONLINE
+          {t("systemStatus.value")}
         </Box>
       </Typography>
     </FlexBoxBetween>

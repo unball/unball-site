@@ -20,7 +20,7 @@ function AboutSection() {
         <Box
           component="img"
           src={Logo}
-          alt={t("navbar.logoAlt", "UnBall Logo")}
+          alt={t("navbar.logoAlt")}
           sx={{
             width: { xs: "180px", sm: "240px", md: "280px" },
             height: "auto",

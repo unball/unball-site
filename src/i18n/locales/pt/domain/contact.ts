@@ -1,5 +1,6 @@
 export const contact = {
   form: {
+    terminalTitle: "TERMINAL_SECURE",
     command: "> ./iniciar_comunicacao.sh",
     commandLabel: "Comando do terminal",
     name: "NOME",
