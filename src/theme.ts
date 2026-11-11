@@ -64,7 +64,7 @@ const palette = {
     main: "#FFBD2E",
   },
   info: {
-    main: "#40A5FF",
+    main: SECONDARY_MAIN,
   },
   success: {
     main: "#27C93F",
@@ -94,12 +94,6 @@ export const theme = createTheme({
       fontFamily: FONTS.display,
       fontWeight: 400,
       fontSize: "1.5rem",
-      "@media (min-width:600px)": {
-        fontSize: "2rem",
-      },
-      "@media (min-width:900px)": {
-        fontSize: "2.25rem",
-      },
     },
     h3: {
       fontFamily: FONTS.display,
@@ -209,7 +203,7 @@ export const theme = createTheme({
       styleOverrides: {
         underline: {
           "&:before": {
-            borderBottom: `1px solid ${alpha(SECONDARY_MAIN, 0.4)}`,
+            borderBottom: `1px solid ${palette.border.main}`,
           },
           "&:hover:not(.Mui-disabled):before": {
             borderBottom: `1px solid ${SECONDARY_MAIN}`,
@@ -231,5 +225,15 @@ export const theme = createTheme({
     },
   },
 });
+
+theme.typography.h2 = {
+  ...theme.typography.h2,
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "2.25rem",
+  },
+};
 
 export default theme;

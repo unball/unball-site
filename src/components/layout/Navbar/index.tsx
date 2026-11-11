@@ -7,8 +7,9 @@ import {
   IconButton,
   Stack,
   Typography,
+  useScrollTrigger,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Logo from "@/assets/images/logos/unball-logo.png";
@@ -26,15 +27,10 @@ function Navbar() {
   const getPath = useLocalizedPath();
   const navItems = useNavItems();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const scrolled = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: NAVBAR_HEIGHT,
+  });
 
   return (
     <Box
@@ -138,7 +134,7 @@ function Navbar() {
                 to={item.path}
                 end={item.end}
                 onClick={() => setMobileOpen(false)}
-                style={{ display: "block", width: "100%", fontSize: "1rem" }}
+                sx={{ display: "block", width: "100%", fontSize: "1rem" }}
               >
                 {item.label}
               </NavButton>

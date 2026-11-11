@@ -1,3 +1,5 @@
+import type { LeagueItem } from "@/types/content";
+
 export const league = {
   subtitle: "// ACTIVE CATEGORIES",
   title: "COMPETING LEAGUES",
@@ -25,5 +27,5 @@ export const league = {
         description: "Omnidirectional",
       },
     },
-  ],
+  ] satisfies LeagueItem[],
 };

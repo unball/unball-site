@@ -1,3 +1,5 @@
+import type { PaperItem } from "@/types/content";
+
 export const papers = {
   empty: "No publications found for the selected filter.",
   yearBadgeText: "YEAR",
@@ -83,5 +85,5 @@ export const papers = {
       ],
       ctaText: "Open link",
     },
-  ],
+  ] satisfies PaperItem[],
 };

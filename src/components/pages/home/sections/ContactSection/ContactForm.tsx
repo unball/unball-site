@@ -109,7 +109,7 @@ function ContactForm() {
     <Card
       sx={{
         width: "100%",
-        padding: "0 !important",
+        p: { xs: 0, sm: 0 },
         backgroundColor: "background.default",
         border: 1,
         borderColor: "border.main",

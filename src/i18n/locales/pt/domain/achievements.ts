@@ -1,3 +1,5 @@
+import type { AchievementItem } from "@/types/content";
+
 export const achievements = {
   title: "CONQUISTAS",
   subtitle: "// RANKING E HISTÓRICO",
@@ -39,5 +41,5 @@ export const achievements = {
       year: "2019",
       icon: "trophy",
     },
-  ],
+  ] satisfies AchievementItem[],
 };

@@ -1,7 +1,8 @@
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { FlexBoxBetween } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
 import AchievementBadge, { type BadgeVariant } from "./AchievementBadge";
@@ -42,12 +43,9 @@ export function AchievementCarousel({ items }: AchievementCarouselProps) {
     setActiveIndex((prev) => ((prev < count ? prev : 0) + 1) % count);
 
   return (
-    <Stack
-      direction="row"
+    <FlexBoxBetween
       sx={{
         width: "100%",
-        alignItems: "center",
-        justifyContent: "space-between",
         paddingY: { xs: 1, md: 2 },
         boxSizing: "border-box",
       }}
@@ -97,8 +95,6 @@ export function AchievementCarousel({ items }: AchievementCarouselProps) {
         label={t("domain.achievements.next")}
         onClick={handleNext}
       />
-    </Stack>
+    </FlexBoxBetween>
   );
 }
-
-export default AchievementCarousel;

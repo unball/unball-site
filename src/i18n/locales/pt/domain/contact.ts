@@ -1,3 +1,5 @@
+import type { ContactItem } from "@/types/content";
+
 export const contact = {
   form: {
     terminalTitle: "TERMINAL_SECURE",
@@ -53,5 +55,5 @@ export const contact = {
       value: "/company/equipe-unball",
       link: "https://www.linkedin.com/company/equipe-unball/",
     },
-  ],
+  ] satisfies ContactItem[],
 };

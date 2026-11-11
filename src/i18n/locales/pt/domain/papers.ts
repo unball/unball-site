@@ -1,3 +1,5 @@
+import type { PaperItem } from "@/types/content";
+
 export const papers = {
   empty: "Nenhuma publicação encontrada para o filtro selecionado.",
   yearBadgeText: "ANO",
@@ -83,5 +85,5 @@ export const papers = {
       ],
       ctaText: "Abrir Link",
     },
-  ],
+  ] satisfies PaperItem[],
 };

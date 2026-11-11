@@ -19,7 +19,7 @@ export const StyledSwitch = styled(Switch)(({ theme }) => ({
       "& + .MuiSwitch-track": {
         backgroundColor: alpha(theme.palette.secondary.main, 0.1),
         opacity: 1,
-        border: `1px solid ${alpha(theme.palette.secondary.main, 0.3)}`,
+        border: `1px solid ${theme.palette.border.main}`,
       },
     },
   },
@@ -49,7 +49,7 @@ export const StyledSwitch = styled(Switch)(({ theme }) => ({
   "& .MuiSwitch-track": {
     borderRadius: 20,
     backgroundColor: alpha(theme.palette.secondary.main, 0.1),
-    border: `1px solid ${alpha(theme.palette.secondary.main, 0.3)}`,
+    border: `1px solid ${theme.palette.border.main}`,
     opacity: 1,
     boxSizing: "border-box",
     position: "relative",
