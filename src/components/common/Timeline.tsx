@@ -16,7 +16,7 @@ const CONNECTOR_WIDTH_SM = 32;
 const MARKER_TOP = 24;
 const LINE_EXTENSION = 48;
 
-export function Timeline({ items, sx }: TimelineProps) {
+function Timeline({ items, sx }: TimelineProps) {
   if (items.length === 0) return null;
 
   return (

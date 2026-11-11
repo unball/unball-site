@@ -78,7 +78,7 @@ export type SectionImageProps = {
 
 const DEFAULT_WIDTH = { xs: "100%", sm: "380px", lg: "410px", xl: "650px" };
 
-export function SectionImage({
+function SectionImage({
   src = defaultSectionImg,
   alt = "",
   width = DEFAULT_WIDTH,

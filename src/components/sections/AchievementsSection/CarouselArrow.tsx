@@ -9,11 +9,7 @@ export type CarouselArrowProps = {
   onClick?: () => void;
 };
 
-export function CarouselArrow({
-  direction,
-  label,
-  onClick,
-}: CarouselArrowProps) {
+function CarouselArrow({ direction, label, onClick }: CarouselArrowProps) {
   const Icon = direction === "left" ? ChevronLeft : ChevronRight;
 
   return (

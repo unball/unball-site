@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-import SectionHeader from "@/components/common/SectionHeader";
+import { SectionHeader } from "@/components/common/SectionHeader";
 import Timeline from "@/components/common/Timeline";
 import { useTranslatedList } from "@/hooks/useTranslatedList";
 import { BoxSection } from "@/shared/styled";

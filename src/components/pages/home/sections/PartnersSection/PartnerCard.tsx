@@ -85,5 +85,3 @@ export function PartnerCard({ item }: PartnerCardProps) {
     </Box>
   );
 }
-
-export default PartnerCard;

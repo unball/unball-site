@@ -6,9 +6,7 @@ import { alpha, Box, ButtonBase, Stack, Typography } from "@mui/material";
 import type { ResponsiveStyleValue } from "@mui/system";
 import type { ReactNode } from "react";
 
-import type { AchievementItem } from "@/types/content";
-
-export type { AchievementItem };
+import type { AchievementIcon, AchievementItem } from "@/types/content";
 
 export type BadgeVariant = "center" | "side" | "far";
 
@@ -18,7 +16,7 @@ export type AchievementBadgeProps = {
   onClick?: () => void;
 };
 
-const ICONS: Record<string, ReactNode> = {
+const ICONS: Record<AchievementIcon, ReactNode> = {
   trophy: <EmojiEventsOutlined />,
   medal: <WorkspacePremiumOutlined />,
 };
@@ -51,7 +49,7 @@ const SIZES: Record<BadgeVariant, SizeConfig> = {
   },
 };
 
-export function AchievementBadge({
+function AchievementBadge({
   achievement,
   variant = "side",
   onClick,

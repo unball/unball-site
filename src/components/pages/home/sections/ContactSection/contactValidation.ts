@@ -19,8 +19,6 @@ export const SUBJECT_OPTIONS = [
   "other",
 ] as const;
 
-export type SubjectKey = (typeof SUBJECT_OPTIONS)[number];
-
 export function validateContactForm(
   formData: FormData,
   t: (key: string) => string

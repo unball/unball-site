@@ -11,5 +11,3 @@ export function ColoredCircle({ color, size = 12 }: ColoredCircleProps) {
     </svg>
   );
 }
-
-export default ColoredCircle;

@@ -60,5 +60,3 @@ export function SectionHeader({
     </Stack>
   );
 }
-
-export default SectionHeader;

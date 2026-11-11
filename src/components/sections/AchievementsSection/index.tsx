@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
 
 import { SectionHeader } from "@/components/common/SectionHeader";
+import type { SharedSectionProps } from "@/components/sections/types";
 import { useTranslatedList } from "@/hooks/useTranslatedList";
-import { BoxSection, Panel } from "@/shared/styled";
+import { BoxSection, Panel, type PanelProps } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
-import type { SharedSectionProps } from "../types";
 import { AchievementCarousel } from "./AchievementCarousel";
 
 export type AchievementsSectionProps = SharedSectionProps & {
-  bordered?: "all" | "x" | "y" | "none";
+  bordered?: PanelProps["bordered"];
 };
 
 function AchievementsSection({
