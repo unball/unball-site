@@ -3,20 +3,16 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import { SectionHeader } from "@/components/common/SectionHeader";
+import type { SharedSectionProps } from "@/components/sections/types";
 import { usePapers } from "@/hooks/usePapers";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { BoxSection } from "@/shared/styled";
 import type { PaperFilterType } from "@/types/content";
 
-import type { SharedSectionProps } from "../types";
 import { PaperList } from "./PaperList";
-
-export { PaperList };
 
 export type PapersSectionProps = SharedSectionProps & {
   filterType?: PaperFilterType;
-  limit?: number;
-  showMoreButton?: boolean;
   disableWrapper?: boolean;
 };
 
@@ -25,22 +21,17 @@ function PapersSection({
   subtitle,
   showHeader = true,
   filterType = "all",
-  limit,
-  showMoreButton,
   disableWrapper = false,
 }: PapersSectionProps = {}) {
   const { t } = useTranslation();
   const getPath = useLocalizedPath();
 
-  const effectiveLimit =
-    limit !== undefined ? limit : showHeader ? 2 : undefined;
-
   const { displayedPapers, hasMore } = usePapers({
     filterType,
-    limit: effectiveLimit,
+    limit: showHeader ? 2 : undefined,
   });
 
-  const shouldShowMore = showMoreButton ?? (showHeader && hasMore);
+  const shouldShowMore = showHeader && hasMore;
 
   const content = (
     <Stack spacing={2} sx={{ width: "100%" }}>

@@ -2,29 +2,14 @@ import { alpha, Button, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import { NAVBAR_HEIGHT } from "@/theme";
-import type { PaperFilterType } from "@/types/content";
-
-export type { PaperFilterType };
+import { PAPER_TYPES, type PaperFilterType } from "@/types/content";
 
 export interface PaperFilterProps {
   activeFilter: PaperFilterType;
   onFilterChange: (filter: PaperFilterType) => void;
 }
 
-const FILTER_OPTIONS: {
-  key: PaperFilterType;
-  labelKey: string;
-  defaultLabel: string;
-}[] = [
-  { key: "all", labelKey: "pages.papers.filters.all", defaultLabel: "TODOS" },
-  { key: "tdp", labelKey: "pages.papers.filters.tdp", defaultLabel: "TDPS" },
-  {
-    key: "article",
-    labelKey: "pages.papers.filters.article",
-    defaultLabel: "ARTIGOS",
-  },
-  { key: "tcc", labelKey: "pages.papers.filters.tcc", defaultLabel: "TCCS" },
-];
+const FILTER_OPTIONS: readonly PaperFilterType[] = ["all", ...PAPER_TYPES];
 
 function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
   const { t } = useTranslation();
@@ -41,13 +26,13 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
         top: { md: `calc(${NAVBAR_HEIGHT}px + ${theme.spacing(9)})` },
       })}
     >
-      {FILTER_OPTIONS.map((option) => {
-        const isActive = activeFilter === option.key;
+      {FILTER_OPTIONS.map((filterKey) => {
+        const isActive = activeFilter === filterKey;
         return (
           <Button
-            key={option.key}
+            key={filterKey}
             aria-pressed={isActive}
-            onClick={() => onFilterChange(option.key)}
+            onClick={() => onFilterChange(filterKey)}
             sx={(theme) => ({
               fontFamily: theme.typography.fontFamilyMono,
               fontSize: { xs: "0.75rem", sm: "0.8125rem" },
@@ -85,7 +70,7 @@ function PaperFilter({ activeFilter, onFilterChange }: PaperFilterProps) {
                   }),
             })}
           >
-            {t(option.labelKey, option.defaultLabel)}
+            {t(`pages.papers.filters.${filterKey}`)}
           </Button>
         );
       })}

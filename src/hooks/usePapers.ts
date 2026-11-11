@@ -17,9 +17,9 @@ export function usePapers({
   const allPapers = useMemo(
     () =>
       [...rawPapers].sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
       ),
-    [rawPapers],
+    [rawPapers]
   );
 
   const filteredPapers = useMemo(() => {
@@ -37,10 +37,7 @@ export function usePapers({
   const hasMore = limit !== undefined && filteredPapers.length > limit;
 
   return {
-    allPapers,
-    filteredPapers,
     displayedPapers,
     hasMore,
-    totalCount: filteredPapers.length,
   };
 }
