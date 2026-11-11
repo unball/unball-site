@@ -35,3 +35,4 @@ function MascotSection() {
 }
 
 export default MascotSection;
+
