@@ -1,7 +1,9 @@
 import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+import MascotImage from "@/assets/images/unbolinha/bolinha_bandeira.png";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import SectionImage from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
 import ContactForm from "./ContactForm";
@@ -19,12 +21,24 @@ function ContactSection() {
           alignItems: { xs: "stretch", md: "flex-start" },
         }}
       >
-        <SectionHeader
-          subtitle={t("pages.home.contact.subtitle")}
-          title={t("pages.home.contact.title")}
-          description={t("pages.home.contact.description")}
-          sx={{ width: "100%", maxWidth: { md: "45%" } }}
-        />
+        <Stack
+          spacing={4}
+          sx={{
+            width: "100%",
+            maxWidth: { md: "45%" },
+          }}
+        >
+          <SectionHeader
+            subtitle={t("pages.home.contact.subtitle")}
+            title={t("pages.home.contact.title")}
+            description={t("pages.home.contact.description")}
+          />
+          <SectionImage
+            src={MascotImage}
+            alt={t("pages.home.contact.imageAlt")}
+            maxHeight="489px"
+          />
+        </Stack>
         <Stack sx={{ width: "100%", maxWidth: { md: "55%" } }}>
           <ContactForm />
         </Stack>

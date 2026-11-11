@@ -71,6 +71,7 @@ export type SectionImageProps = {
   src?: string;
   alt?: string;
   width?: ResponsiveStyleValue<string | number>;
+  maxHeight?: ResponsiveStyleValue<string | number>;
   showDimensions?: boolean;
   sx?: SxProps<Theme>;
 };
@@ -81,6 +82,7 @@ export function SectionImage({
   src = defaultSectionImg,
   alt = "",
   width = DEFAULT_WIDTH,
+  maxHeight,
   showDimensions = false,
   sx,
 }: SectionImageProps) {
@@ -147,7 +149,7 @@ export function SectionImage({
       <Box
         sx={{
           position: "relative",
-          width,
+          width: maxHeight ? "auto" : width,
           maxWidth: "100%",
           display: "inline-block",
         }}
@@ -159,8 +161,10 @@ export function SectionImage({
           alt={alt}
           onLoad={showDimensions ? updateDimensions : undefined}
           sx={{
-            width: "100%",
+            width: maxHeight ? "auto" : "100%",
+            maxWidth: "100%",
             height: "auto",
+            maxHeight,
             display: "block",
             borderRadius: 1,
           }}

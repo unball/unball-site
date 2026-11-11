@@ -3,4 +3,5 @@ export const contact = {
   subtitle: "// CONTACT US",
   description:
     "Got questions about the project, want to apply to the selection process, or propose a partnership? Send us a message.",
+  imageAlt: "UnBolinha holding the UnBall flag",
 };
