@@ -42,7 +42,7 @@ const FOOTER_LINK_SX = {
   textDecoration: "none",
   transition: "color 0.2s ease-in-out",
   "&:hover": {
-    color: "text.primary",
+    color: "primary.main",
   },
 } as const;
 
