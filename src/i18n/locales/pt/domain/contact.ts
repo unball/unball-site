@@ -55,5 +55,12 @@ export const contact = {
       value: "/company/equipe-unball",
       link: "https://www.linkedin.com/company/equipe-unball/",
     },
+    {
+      type: "location",
+      title: "Localização",
+      value:
+        "Unidade de Laboratórios de Ensino e Graduação da Faculdade de Tecnologia (ULEG/FT), UnB - Asa Norte, Brasília - DF",
+      link: "https://maps.app.goo.gl/jBjtawWRz8BsJEZS7",
+    },
   ] satisfies ContactItem[],
 };

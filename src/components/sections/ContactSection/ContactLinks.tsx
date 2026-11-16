@@ -1,4 +1,10 @@
-import { Email, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+import {
+  Email,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  LocationOn,
+} from "@mui/icons-material";
 import { Box, Stack, Typography } from "@mui/material";
 import type { ReactNode } from "react";
 
@@ -10,6 +16,7 @@ const CONTACT_ICONS: Record<ContactType, ReactNode> = {
   github: <GitHub fontSize="small" />,
   instagram: <Instagram fontSize="small" />,
   linkedin: <LinkedIn fontSize="small" />,
+  location: <LocationOn fontSize="small" />,
 };
 
 function externalLinkProps(href: string) {

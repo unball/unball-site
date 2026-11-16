@@ -55,7 +55,12 @@ export type InstitutionalItem = {
   href: string;
 };
 
-export type ContactType = "email" | "github" | "instagram" | "linkedin";
+export type ContactType =
+  | "email"
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "location";
 
 export const SUBJECT_OPTIONS = [
   "questions",

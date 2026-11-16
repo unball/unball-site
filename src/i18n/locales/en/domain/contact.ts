@@ -54,5 +54,12 @@ export const contact = {
       value: "/company/equipe-unball",
       link: "https://www.linkedin.com/company/equipe-unball/",
     },
+    {
+      type: "location",
+      title: "Location",
+      value:
+        "Teaching and Undergraduate Laboratories Unit of the Faculty of Technology (ULEG/FT), UnB - Asa Norte, Brasília - DF",
+      link: "https://maps.app.goo.gl/jBjtawWRz8BsJEZS7",
+    },
   ] satisfies ContactItem[],
 };

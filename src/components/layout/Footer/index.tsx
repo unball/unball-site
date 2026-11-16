@@ -34,6 +34,7 @@ const CONTACT_ICONS: Record<ContactType, ReactNode> = {
   github: <GitHub fontSize="small" />,
   instagram: <Instagram fontSize="small" />,
   linkedin: <LinkedIn fontSize="small" />,
+  location: <LocationOn fontSize="small" />,
 };
 
 const FOOTER_LINK_SX = {
@@ -106,25 +107,12 @@ function Footer() {
                 },
               })}
             >
-              <Box
-                aria-label={t("footer.labels.location")}
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <LocationOn fontSize="small" />
-                <Typography variant="body2">
-                  {t("footer.locationValue")}
-                </Typography>
-              </Box>
               {contactItems.map((item) => (
                 <Box
                   key={item.type}
                   component="a"
                   {...externalLinkProps(item.link)}
-                  aria-label={t(`footer.labels.${item.type}`)}
+                  aria-label={item.title}
                   sx={{
                     ...FOOTER_LINK_SX,
                     display: "inline-flex",
