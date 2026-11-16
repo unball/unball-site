@@ -96,15 +96,6 @@ export function LeagueCard({ item }: LeagueCardProps) {
                 {item.trivia.description}
               </Typography>
             </Stack>
-            <Box
-              sx={{
-                border: 1,
-                borderColor: "border.main",
-                backgroundColor: "background.default",
-                width: { xs: "3rem", sm: "4rem" },
-                height: { xs: "3rem", sm: "4rem" },
-              }}
-            />
           </FlexBoxBetween>
         </Box>
       )}
