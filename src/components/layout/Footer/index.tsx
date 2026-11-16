@@ -1,4 +1,10 @@
-import { Email, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+import {
+  Email,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  LocationOn,
+} from "@mui/icons-material";
 import {
   alpha,
   Box,
@@ -100,20 +106,36 @@ function Footer() {
                 },
               })}
             >
-              <Typography variant="body2">
-                {t("footer.labels.location")}: {t("footer.locationValue")}
-              </Typography>
-              {contactItems.map((item) => (
-                <Typography key={item.type} variant="body2">
-                  {t(`footer.labels.${item.type}`)}:{" "}
-                  <Box
-                    component="a"
-                    {...externalLinkProps(item.link)}
-                    sx={FOOTER_LINK_SX}
-                  >
-                    {item.value}
-                  </Box>
+              <Box
+                aria-label={t("footer.labels.location")}
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 1,
+                }}
+              >
+                <LocationOn fontSize="small" />
+                <Typography variant="body2">
+                  {t("footer.locationValue")}
                 </Typography>
+              </Box>
+              {contactItems.map((item) => (
+                <Box
+                  key={item.type}
+                  component="a"
+                  {...externalLinkProps(item.link)}
+                  aria-label={t(`footer.labels.${item.type}`)}
+                  sx={{
+                    ...FOOTER_LINK_SX,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 1,
+                    width: "fit-content",
+                  }}
+                >
+                  {CONTACT_ICONS[item.type]}
+                  <Typography variant="body2">{item.value}</Typography>
+                </Box>
               ))}
             </Stack>
           </Stack>
