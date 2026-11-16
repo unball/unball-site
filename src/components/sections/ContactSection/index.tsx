@@ -4,11 +4,18 @@ import { useTranslation } from "react-i18next";
 import MascotImage from "@/assets/images/unbolinha/bolinha_bandeira.png";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { SectionImage } from "@/components/common/SectionImage";
+import type { SharedSectionProps } from "@/components/sections/types";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
 import { ContactForm } from "./ContactForm";
 
-function ContactSection() {
+export type ContactSectionProps = SharedSectionProps;
+
+function ContactSection({
+  title,
+  subtitle,
+  showHeader = true,
+}: ContactSectionProps = {}) {
   const { t } = useTranslation();
 
   return (
@@ -28,11 +35,13 @@ function ContactSection() {
             maxWidth: { md: "45%" },
           }}
         >
-          <SectionHeader
-            subtitle={t("pages.home.contact.subtitle")}
-            title={t("pages.home.contact.title")}
-            description={t("pages.home.contact.description")}
-          />
+          {showHeader && (
+            <SectionHeader
+              subtitle={subtitle ?? t("pages.home.contact.subtitle")}
+              title={title ?? t("pages.home.contact.title")}
+              description={t("pages.home.contact.description")}
+            />
+          )}
           <SectionImage
             src={MascotImage}
             alt={t("pages.home.contact.imageAlt")}

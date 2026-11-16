@@ -1,8 +1,7 @@
-import { useTranslation } from "react-i18next";
+import ContactSection from "@/components/sections/ContactSection";
 
 function Contact() {
-  const { t } = useTranslation();
-  return <h1>{t("pages.contact.title")}</h1>;
+  return <ContactSection />;
 }
 
 export default Contact;
