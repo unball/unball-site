@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import type { SharedSectionProps } from "@/components/sections/types";
 import { useTranslatedList } from "@/hooks/useTranslatedList";
-import { BoxSection, Panel, type PanelProps } from "@/shared/styled";
+import { BoxSection, type PanelProps, SectionPanel } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
 import { AchievementCarousel } from "./AchievementCarousel";
@@ -25,22 +25,7 @@ function AchievementsSection({
 
   return (
     <BoxSection>
-      <Panel
-        bordered={bordered}
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          paddingY: { xs: 4, sm: 6, md: 10, xl: 12 },
-          paddingX: { xs: 2, sm: 3, md: 4, xl: 6 },
-          gap: { xs: 3, sm: 4, md: 6, xl: 8 },
-          width: "100%",
-          maxWidth: "100%",
-          boxSizing: "border-box",
-          overflow: "hidden",
-        }}
-      >
+      <SectionPanel bordered={bordered}>
         {showHeader && (
           <SectionHeader
             subtitle={subtitle ?? t("domain.achievements.subtitle")}
@@ -50,7 +35,7 @@ function AchievementsSection({
         )}
 
         <AchievementCarousel items={achievementItems} />
-      </Panel>
+      </SectionPanel>
     </BoxSection>
   );
 }
