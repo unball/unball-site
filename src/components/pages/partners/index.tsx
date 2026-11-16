@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import MascotImage from "@/assets/images/unbolinha/bolinha_peruano.png";
 import PageHeroSection from "@/components/sections/PageHeroSection";
+import PartnerSection from "@/components/sections/PartnerSection";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 
 function Partners() {
@@ -22,6 +23,7 @@ function Partners() {
           {t("pages.partners.hero.ctaPartners")}
         </Button>
       </PageHeroSection>
+      <PartnerSection showHeader={false} />
     </>
   );
 }
