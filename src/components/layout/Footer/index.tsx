@@ -6,6 +6,7 @@ import {
   Grid,
   IconButton,
   Stack,
+  type Theme,
   Typography,
 } from "@mui/material";
 import type { ReactNode } from "react";
@@ -37,6 +38,13 @@ const FOOTER_LINK_SX = {
     color: "text.primary",
   },
 } as const;
+
+const FOOTER_HEADING_SX = (theme: Theme) => ({
+  fontFamily: theme.typography.fontFamilyMono,
+  fontSize: "0.875rem",
+  color: "text.primary",
+  textTransform: "uppercase",
+});
 
 function externalLinkProps(href: string) {
   return href.startsWith("mailto:")
@@ -86,19 +94,17 @@ function Footer() {
             <Stack
               spacing={1.25}
               sx={(theme) => ({
-                fontFamily: theme.typography.fontFamilyMono,
                 color: "text.secondary",
+                "& .MuiTypography-root": {
+                  fontFamily: theme.typography.fontFamilyMono,
+                },
               })}
             >
-              <Typography variant="body2" sx={{ fontFamily: "inherit" }}>
+              <Typography variant="body2">
                 {t("footer.labels.location")}: {t("footer.locationValue")}
               </Typography>
               {contactItems.map((item) => (
-                <Typography
-                  key={item.type}
-                  variant="body2"
-                  sx={{ fontFamily: "inherit" }}
-                >
+                <Typography key={item.type} variant="body2">
                   {t(`footer.labels.${item.type}`)}:{" "}
                   <Box
                     component="a"
@@ -114,15 +120,7 @@ function Footer() {
         </Grid>
         <Grid size={{ xs: 6, md: 3 }}>
           <Stack spacing={3}>
-            <Typography
-              variant="h6"
-              sx={(theme) => ({
-                fontFamily: theme.typography.fontFamilyMono,
-                fontSize: "0.875rem",
-                color: "text.primary",
-                textTransform: "uppercase",
-              })}
-            >
+            <Typography variant="h6" sx={FOOTER_HEADING_SX}>
               {t("footer.mappingTitle")}
             </Typography>
             <Stack spacing={1.25}>
@@ -141,15 +139,7 @@ function Footer() {
         </Grid>
         <Grid size={{ xs: 6, md: 3 }}>
           <Stack spacing={3}>
-            <Typography
-              variant="h6"
-              sx={(theme) => ({
-                fontFamily: theme.typography.fontFamilyMono,
-                fontSize: "0.875rem",
-                color: "text.primary",
-                textTransform: "uppercase",
-              })}
-            >
+            <Typography variant="h6" sx={FOOTER_HEADING_SX}>
               {t("footer.institutionalTitle")}
             </Typography>
             <Stack spacing={1.25}>
