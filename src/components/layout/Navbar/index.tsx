@@ -18,7 +18,7 @@ import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 import { FlexBoxBetween } from "@/shared/styled";
 import { NAVBAR_HEIGHT } from "@/theme";
 
-import { LanguageSwitch } from "./LanguageSwitch";
+import LanguageSwitch from "./LanguageSwitch";
 import { LogoLink } from "./LogoLink";
 import { NavButton } from "./NavButton";
 

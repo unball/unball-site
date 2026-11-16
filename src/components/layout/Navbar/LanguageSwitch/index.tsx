@@ -7,7 +7,7 @@ import { useCurrentLang } from "@/i18n/useLocalizedPath";
 
 import { StyledSwitch } from "./StyledSwitch";
 
-export function LanguageSwitch() {
+function LanguageSwitch() {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,3 +32,5 @@ export function LanguageSwitch() {
     />
   );
 }
+
+export default LanguageSwitch;

@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import MascotImage from "@/assets/images/unbolinha/bolinha_bandeira.png";
 import { SectionHeader } from "@/components/common/SectionHeader";
-import SectionImage from "@/components/common/SectionImage";
+import { SectionImage } from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
-import ContactForm from "./ContactForm";
+import { ContactForm } from "./ContactForm";
 
 function ContactSection() {
   const { t } = useTranslation();

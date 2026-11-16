@@ -38,7 +38,7 @@ const INITIAL_FORM_DATA: FormData = {
   message: "",
 };
 
-function ContactForm() {
+export function ContactForm() {
   const { t } = useTranslation();
   const theme = useTheme();
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
@@ -261,5 +261,3 @@ function ContactForm() {
     </Card>
   );
 }
-
-export default ContactForm;

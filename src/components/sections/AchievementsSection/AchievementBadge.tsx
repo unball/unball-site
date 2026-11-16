@@ -49,7 +49,7 @@ const SIZES: Record<BadgeVariant, SizeConfig> = {
   },
 };
 
-function AchievementBadge({
+export function AchievementBadge({
   achievement,
   variant = "side",
   onClick,
@@ -157,5 +157,3 @@ function AchievementBadge({
     </ButtonBase>
   );
 }
-
-export default AchievementBadge;

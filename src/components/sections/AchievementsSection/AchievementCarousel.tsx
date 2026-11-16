@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { FlexBoxBetween } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
-import AchievementBadge, { type BadgeVariant } from "./AchievementBadge";
-import CarouselArrow from "./CarouselArrow";
+import { AchievementBadge, type BadgeVariant } from "./AchievementBadge";
+import { CarouselArrow } from "./CarouselArrow";
 
 export type AchievementCarouselProps = {
   items: AchievementItem[];

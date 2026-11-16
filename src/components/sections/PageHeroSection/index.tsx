@@ -3,8 +3,10 @@ import type { ReactNode } from "react";
 
 import type { SectionHeaderProps } from "@/components/common/SectionHeader";
 import { SectionHeader } from "@/components/common/SectionHeader";
-import type { SectionImageProps } from "@/components/common/SectionImage";
-import SectionImage from "@/components/common/SectionImage";
+import {
+  SectionImage,
+  type SectionImageProps,
+} from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
 export interface PageHeroSectionProps {
