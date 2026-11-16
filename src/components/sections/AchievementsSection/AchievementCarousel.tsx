@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FlexBoxBetween } from "@/shared/styled";
 import type { AchievementItem } from "@/types/content";
 
-import { AchievementBadge, type BadgeVariant } from "./AchievementBadge";
+import { AchievementBadge } from "./AchievementBadge";
 import { CarouselArrow } from "./CarouselArrow";
 
 export type AchievementCarouselProps = {
@@ -13,12 +13,6 @@ export type AchievementCarouselProps = {
 };
 
 const MAX_OFFSET = 2;
-
-function getVariant(offset: number): BadgeVariant {
-  const distance = Math.abs(offset);
-  if (distance === 0) return "center";
-  return distance === MAX_OFFSET ? "far" : "side";
-}
 
 export function AchievementCarousel({ items }: AchievementCarouselProps) {
   const { t } = useTranslation();
@@ -69,20 +63,18 @@ export function AchievementCarousel({ items }: AchievementCarouselProps) {
         {offsets.map((offset) => {
           const itemIndex = (safeActiveIndex + offset + count) % count;
           const item = items[itemIndex];
-          const variant = getVariant(offset);
+          const isOuter = Math.abs(offset) === MAX_OFFSET;
 
           return (
             <Box
               key={`${item.id}-${offset}`}
               sx={{
-                display:
-                  variant === "far" ? { xs: "none", lg: "block" } : "block",
+                display: isOuter ? { xs: "none", lg: "block" } : "block",
                 flexShrink: 0,
               }}
             >
               <AchievementBadge
                 achievement={item}
-                variant={variant}
                 onClick={() => setActiveIndex(itemIndex)}
               />
             </Box>
