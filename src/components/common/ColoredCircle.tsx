@@ -1,7 +1,7 @@
-export interface ColoredCircleProps {
+export type ColoredCircleProps = {
   color: string;
   size?: number;
-}
+};
 
 export function ColoredCircle({ color, size = 12 }: ColoredCircleProps) {
   const radius = size / 2;

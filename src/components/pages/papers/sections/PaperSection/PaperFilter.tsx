@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import { NAVBAR_HEIGHT } from "@/theme";
 import { PAPER_TYPES, type PaperFilterType } from "@/types/content";
 
-export interface PaperFilterProps {
+export type PaperFilterProps = {
   activeFilter: PaperFilterType;
   onFilterChange: (filter: PaperFilterType) => void;
-}
+};
 
 const FILTER_OPTIONS: readonly PaperFilterType[] = ["all", ...PAPER_TYPES];
 

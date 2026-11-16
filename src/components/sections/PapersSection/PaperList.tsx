@@ -5,10 +5,10 @@ import type { PaperItem } from "@/types/content";
 
 import { PaperCard } from "./PaperCard";
 
-export interface PaperListProps {
+export type PaperListProps = {
   items: PaperItem[];
   emptyMessage?: string;
-}
+};
 
 export function PaperList({ items, emptyMessage }: PaperListProps) {
   const { t } = useTranslation();

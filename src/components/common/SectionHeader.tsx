@@ -2,7 +2,7 @@ import type { SxProps, Theme } from "@mui/material";
 import { Stack, Typography } from "@mui/material";
 import type { ReactNode } from "react";
 
-export interface SectionHeaderProps {
+export type SectionHeaderProps = {
   subtitle?: string;
   title: string;
   description?: string;
@@ -12,7 +12,7 @@ export interface SectionHeaderProps {
   align?: "left" | "center" | "right";
   sx?: SxProps<Theme>;
   children?: ReactNode;
-}
+};
 
 const ALIGNMENT_MAP = {
   left: "flex-start",

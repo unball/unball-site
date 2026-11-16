@@ -27,9 +27,9 @@ export const BoxSection = styled(Box)(({ theme }) => ({
   },
 }));
 
-export interface PanelProps {
+export type PanelProps = {
   bordered?: "all" | "y" | "x" | "none";
-}
+};
 
 export const Panel = styled(Box, {
   shouldForwardProp: (prop) => prop !== "bordered",

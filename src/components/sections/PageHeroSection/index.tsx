@@ -9,7 +9,7 @@ import {
 } from "@/components/common/SectionImage";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
-export interface PageHeroSectionProps {
+export type PageHeroSectionProps = {
   title: string;
   description: string;
   subtitle?: string;
@@ -23,7 +23,7 @@ export interface PageHeroSectionProps {
   showDimensions?: boolean;
   sx?: SxProps<Theme>;
   children?: ReactNode;
-}
+};
 
 function PageHeroSection({
   title,
