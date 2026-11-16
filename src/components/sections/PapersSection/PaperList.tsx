@@ -25,7 +25,10 @@ export function PaperList({ items, emptyMessage }: PaperListProps) {
           width: "100%",
         }}
       >
-        <Typography variant="body1" sx={{ fontFamily: "fontFamilyMono" }}>
+        <Typography
+          variant="body1"
+          sx={(theme) => ({ fontFamily: theme.typography.fontFamilyMono })}
+        >
           {emptyMessage ?? t("domain.papers.empty")}
         </Typography>
       </Box>
