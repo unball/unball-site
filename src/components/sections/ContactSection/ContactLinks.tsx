@@ -26,18 +26,11 @@ export function ContactLinks() {
       {contactItems.map((item) => (
         <Box
           key={item.type}
-          component="a"
-          {...externalLinkProps(item.link)}
           sx={{
             display: "inline-flex",
             alignItems: "center",
             gap: 1.5,
-            textDecoration: "none",
             color: "text.secondary",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "primary.main",
-            },
           }}
         >
           {CONTACT_ICONS[item.type]}
@@ -47,7 +40,23 @@ export function ContactLinks() {
               fontFamily: theme.typography.fontFamilyMono,
             })}
           >
-            {item.value}
+            <Box component="span" sx={{ textTransform: "uppercase" }}>
+              {item.title}:
+            </Box>{" "}
+            <Box
+              component="a"
+              {...externalLinkProps(item.link)}
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                transition: "color 0.2s ease-in-out",
+                "&:hover": {
+                  color: "primary.main",
+                },
+              }}
+            >
+              {item.value}
+            </Box>
           </Typography>
         </Box>
       ))}
