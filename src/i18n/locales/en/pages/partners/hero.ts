@@ -5,4 +5,3 @@ export const hero = {
   ctaPartners: "BECOME A SPONSOR",
   imageAlt: "UnBolinha, UnBall's mascot",
 };
-
