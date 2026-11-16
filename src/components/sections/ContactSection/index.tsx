@@ -8,6 +8,7 @@ import type { SharedSectionProps } from "@/components/sections/types";
 import { BoxSection, FlexBoxBetween } from "@/shared/styled";
 
 import { ContactForm } from "./ContactForm";
+import { ContactLinks } from "./ContactLinks";
 
 export type ContactSectionProps = SharedSectionProps;
 
@@ -42,11 +43,18 @@ function ContactSection({
               description={t("pages.home.contact.description")}
             />
           )}
-          <SectionImage
-            src={MascotImage}
-            alt={t("pages.home.contact.imageAlt")}
-            maxHeight="489px"
-          />
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={3}
+            sx={{ alignItems: { xs: "flex-start", sm: "center" } }}
+          >
+            <SectionImage
+              src={MascotImage}
+              alt={t("pages.home.contact.imageAlt")}
+              maxHeight="489px"
+            />
+            <ContactLinks />
+          </Stack>
         </Stack>
         <Stack sx={{ width: "100%", maxWidth: { md: "55%" } }}>
           <ContactForm />
