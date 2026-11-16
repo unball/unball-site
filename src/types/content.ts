@@ -57,6 +57,13 @@ export type InstitutionalItem = {
 
 export type ContactType = "email" | "github" | "instagram" | "linkedin";
 
+export const SUBJECT_OPTIONS = [
+  "questions",
+  "selection",
+  "partnerships",
+  "other",
+] as const;
+
 export type ContactItem = {
   type: ContactType;
   title: string;

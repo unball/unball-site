@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import Logo from "@/assets/images/unbolinha/bolinha_sentado.png";
+import MascotImage from "@/assets/images/unbolinha/bolinha_sentado.png";
 import PageHeroSection from "@/components/sections/PageHeroSection";
 import { useLocalizedPath } from "@/i18n/useLocalizedPath";
 
@@ -18,7 +18,7 @@ function HeroSection() {
       titleColor="primary"
       headerSpacing={3}
       headerSx={{ flex: 1, maxWidth: { md: "50%" } }}
-      imageSrc={Logo}
+      imageSrc={MascotImage}
       imageAlt={t("pages.home.hero.imageAlt")}
       showDimensions
     >

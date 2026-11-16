@@ -22,11 +22,11 @@ import {
 import { useTranslation } from "react-i18next";
 
 import { ColoredCircle } from "@/components/common/ColoredCircle";
+import { SUBJECT_OPTIONS } from "@/types/content";
 
 import {
   type FieldErrors,
   type FormData,
-  SUBJECT_OPTIONS,
   validateContactForm,
 } from "./contactValidation";
 import { StyledTextField } from "./StyledTextField";

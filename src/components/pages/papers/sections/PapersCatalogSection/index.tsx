@@ -6,7 +6,7 @@ import type { PaperFilterType } from "@/types/content";
 
 import PaperFilter from "./PaperFilter";
 
-function PaperSection() {
+function PapersCatalogSection() {
   const [activeFilter, setActiveFilter] = useState<PaperFilterType>("all");
 
   return (
@@ -33,4 +33,4 @@ function PaperSection() {
   );
 }
 
-export default PaperSection;
+export default PapersCatalogSection;

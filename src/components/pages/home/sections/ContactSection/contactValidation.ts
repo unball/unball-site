@@ -12,13 +12,6 @@ export interface ValidationResult {
   formError?: string;
 }
 
-export const SUBJECT_OPTIONS = [
-  "questions",
-  "selection",
-  "partnerships",
-  "other",
-] as const;
-
 export function validateContactForm(
   formData: FormData,
   t: (key: string) => string

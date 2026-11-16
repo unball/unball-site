@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import MascotImage from "@/assets/images/unbolinha/bolinha_ginasta.png";
 import PageHeroSection from "@/components/sections/PageHeroSection";
 
-import PaperSection from "./sections/PaperSection";
+import PapersCatalogSection from "./sections/PapersCatalogSection";
 
 function Papers() {
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ function Papers() {
         imageSrc={MascotImage}
         imageAlt={t("pages.papers.hero.imageAlt")}
       />
-      <PaperSection />
+      <PapersCatalogSection />
     </>
   );
 }
